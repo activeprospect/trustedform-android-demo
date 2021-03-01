@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text" />
+
+    <style name="Text.Input">
+        <item name="android:textSize">@dimen/input</item>
+    </style>
+
+    <style name="Text.Input.Primary">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="Text.Input.Primary.ProximaNova" />
+
+    <style name="Text.Input.Primary.ProximaNova.Regular">
+        <item name="fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
+    <style name="Text.Headline">
+        <item name="android:textSize">@dimen/headline</item>
+    </style>
+
+    <style name="Text.Headline2">
+        <item name="android:textSize">@dimen/headline2</item>
+    </style>
+
+    <style name="Text.Headline.Primary">
+        <item name="android:textColor">@color/headline</item>
+    </style>
+
+    <style name="Text.Headline2.Primary">
+        <item name="android:textColor">@color/headline</item>
+    </style>
+
+    <style name="Text.Headline.Primary.ProximaNova" />
+
+    <style name="Text.Headline2.Primary.ProximaNova" />
+
+    <style name="Text.Headline.Primary.ProximaNova.Bold">
+        <item name="fontFamily">@font/proxima_nova_bold</item>
+    </style>
+
+    <style name="Text.Headline2.Primary.ProximaNova.Bold">
+        <item name="fontFamily">@font/proxima_nova_bold</item>
+    </style>
+
+    <style name="Text.Subtitle">
+        <item name="android:textSize">@dimen/subtitle</item>
+    </style>
+
+    <style name="Text.Subtitle2">
+        <item name="android:textSize">@dimen/subtitle2</item>
+    </style>
+
+    <style name="Text.Subtitle3">
+        <item name="android:textSize">@dimen/subtitle3</item>
+    </style>
+
+    <style name="Text.Subtitle.Primary">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="Text.Subtitle2.Primary">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="Text.Subtitle.Secondary">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="Text.Subtitle3.Secondary">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="Text.Subtitle.Primary.ProximaNova" />
+
+    <style name="Text.Subtitle2.Primary.ProximaNova" />
+
+    <style name="Text.Subtitle.Secondary.ProximaNova" />
+
+    <style name="Text.Subtitle3.Secondary.ProximaNova" />
+
+    <style name="Text.Subtitle.Primary.ProximaNova.Regular">
+        <item name="fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
+    <style name="Text.Subtitle2.Primary.ProximaNova.Regular">
+        <item name="fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
+    <style name="Text.Subtitle.Primary.ProximaNova.Light">
+        <item name="fontFamily">@font/proxima_nova_light</item>
+    </style>
+
+    <style name="Text.Subtitle.Secondary.ProximaNova.Light">
+        <item name="fontFamily">@font/proxima_nova_light</item>
+    </style>
+
+    <style name="Text.Subtitle3.Secondary.ProximaNova.SemiBold">
+        <item name="fontFamily">@font/proxima_nova_semibold</item>
+    </style>
+
+    <style name="Text.Caption">
+        <item name="android:textSize">@dimen/caption</item>
+    </style>
+
+    <style name="Text.Caption.Secondary">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="Text.Caption.Secondary.ProximaNova" />
+
+    <style name="Text.Caption.Secondary.ProximaNova.Regular">
+        <item name="fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
+    <style name="Text.Caption.Secondary.ProximaNova.SemiBold">
+        <item name="fontFamily">@font/proxima_nova_semibold</item>
+    </style>
+
+    <style name="Text.Title">
+        <item name="android:textSize">@dimen/title</item>
+    </style>
+
+    <style name="Text.Title2">
+        <item name="android:textSize">@dimen/title2</item>
+    </style>
+
+    <style name="Text.Title3">
+        <item name="android:textSize">@dimen/title3</item>
+    </style>
+
+    <style name="Text.Title.Secondary">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="Text.Title2.Secondary">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="Text.Title3.Primary">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="Text.Title3.Secondary">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="Text.Title.Secondary.ProximaNova" />
+
+    <style name="Text.Title2.Secondary.ProximaNova" />
+    <style name="Text.Title3.Primary.ProximaNova" />
+    <style name="Text.Title3.Secondary.ProximaNova" />
+
+    <style name="Text.Title.Secondary.ProximaNova.Regular">
+        <item name="fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
+    <style name="Text.Title.Secondary.ProximaNova.SemiBold">
+        <item name="fontFamily">@font/proxima_nova_semibold</item>
+    </style>
+
+    <style name="Text.Title2.Secondary.ProximaNova.SemiBold">
+        <item name="fontFamily">@font/proxima_nova_semibold</item>
+    </style>
+
+    <style name="Text.Title3.Primary.ProximaNova.SemiBold">
+        <item name="fontFamily">@font/proxima_nova_semibold</item>
+    </style>
+
+    <style name="Text.Title3.Secondary.ProximaNova.Regular">
+        <item name="fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
+</resources>

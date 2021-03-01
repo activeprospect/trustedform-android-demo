@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.TrustedForm.Fullscreen" parent="">
+        <item name="android:textColor">@color/dusty_gray</item>
+        <item name="android:textSize">@dimen/fullscreen_text_size</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="TextAppearance.TrustedForm.Header" parent="">
+        <item name="android:textColor">@color/brand_navbars</item>
+        <item name="android:textSize">@dimen/header_text_size</item>
+    </style>
+
+    <style name="TextAppearance.TrustedForm.Subheader" parent="">
+        <item name="android:textColor">@color/brand_navbars</item>
+        <item name="android:textSize">@dimen/subheader_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.TrustedForm.Description" parent="">
+        <item name="android:textColor">@color/brand_navbars</item>
+        <item name="android:textSize">@dimen/description_text_size</item>
+    </style>
+
+    <style name="TextAppearance.TrustedForm.Link" parent="">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/link_text_size</item>
+    </style>
+
+    <style name="TextAppearance.TrustedForm.Navigation" parent="">
+        <item name="android:textColor">@color/brand_navbars</item>
+        <item name="android:textSize">@dimen/link_text_size</item>
+    </style>
+</resources>

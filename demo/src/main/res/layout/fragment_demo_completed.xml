@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageDemoComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_56dp"
+            android:gravity="center"
+            android:src="@drawable/ic_demo_complete"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textDemoCompleteHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_40dp"
+            android:layout_marginTop="@dimen/margin_40dp"
+            android:gravity="center"
+            android:text="@string/demo_completed_header"
+            android:textAppearance="@style/Text.Headline.Primary.ProximaNova.Bold"
+            app:layout_constraintTop_toBottomOf="@id/imageDemoComplete" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/textDemoCompleteSubheader"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/margin_large"-->
+<!--            android:layout_marginHorizontal="32dp"-->
+<!--            android:gravity="center"-->
+<!--            tools:text="@string/demo_completed_subheader"-->
+<!--            android:textAppearance="@style/Text.Subtitle.Primary.ProximaNova.Light"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/textDemoCompleteHeader" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

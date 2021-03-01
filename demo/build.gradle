@@ -1,0 +1,69 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion androidVersion.compileSdk
+    buildToolsVersion androidVersion.buildTools
+
+    defaultConfig {
+        applicationId androidVersion.applicationId
+        minSdkVersion androidVersion.minSdk
+        targetSdkVersion androidVersion.targetSdk
+        versionCode 1
+        versionName androidVersion.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding = true
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "androidx.core:core-ktx:$libVersion.core"
+    implementation "androidx.appcompat:appcompat:$libVersion.appCompat"
+
+    implementation "com.google.android.material:material:$libVersion.materialComponents"
+    implementation "androidx.constraintlayout:constraintlayout:$libVersion.constraint"
+
+    implementation "ActiveProspect:sdk-dev:$libVersion.latestSdkVersion" transitive true
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$libVersion.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$libVersion.coroutines"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$libVersion.navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$libVersion.navigation"
+
+    implementation "com.google.dagger:dagger:$libVersion.dagger"
+    kapt "com.google.dagger:dagger-compiler:$libVersion.dagger"
+
+    implementation "com.microsoft.appcenter:appcenter-analytics:$libVersion.appCenter"
+    implementation "com.microsoft.appcenter:appcenter-crashes:$libVersion.appCenter"
+
+    testImplementation 'junit:junit:4.+'
+    testImplementation 'org.koin:koin-test:2.2.1'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

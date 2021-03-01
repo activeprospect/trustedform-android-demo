@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isLoading"
+            type="Boolean" />
+
+        <import type="android.view.inputmethod.EditorInfo" />
+
+        <variable
+            name="viewModel"
+            type="com.activeprospect.trustedform.demo.presentation.view.demoform.DemoFormViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDemoMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/progressDemo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="@dimen/default_view_group_elevation"
+            android:background="@color/white"
+            android:visibility="@{isLoading ? View.VISIBLE : View.GONE}">
+
+            <ImageView
+                android:id="@+id/imageProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_load"
+                app:layout_constraintBottom_toTopOf="@id/textProgress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textProgress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:gravity="center_horizontal"
+                android:text="@string/loading"
+                android:textAppearance="@style/Text.Input.Primary.ProximaNova.Regular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageProgress"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textDemoHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:text="@string/demo_header"
+            android:textAppearance="@style/Text.Headline.Primary.ProximaNova.Bold"
+            app:layout_constraintBottom_toTopOf="@id/textDemoSubheader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textDemoSubheader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/demo_subheader"
+            android:textAppearance="@style/Text.Subtitle.Primary.ProximaNova.Regular"
+            app:layout_constraintBottom_toTopOf="@id/layoutDemoFullName"
+            app:layout_constraintEnd_toEndOf="@id/textDemoHeader"
+            app:layout_constraintStart_toStartOf="@id/textDemoHeader"
+            app:layout_constraintTop_toBottomOf="@id/textDemoHeader"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.activeprospect.trustedform.demo.presentation.widget.CustomLabeledTextEdit
+            android:id="@+id/layoutDemoFullName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            app:hintText="@{@string/demo_label_full_name}"
+            app:imeAction="@{EditorInfo.IME_ACTION_NEXT}"
+            app:labeledText="@={viewModel.fullName}"
+            app:layout_constraintBottom_toTopOf="@id/layoutDemoEmail"
+            app:layout_constraintEnd_toEndOf="@id/textDemoSubheader"
+            app:layout_constraintStart_toStartOf="@id/textDemoSubheader"
+            app:layout_constraintTop_toBottomOf="@id/textDemoSubheader"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:lines="@{1}" />
+
+        <com.activeprospect.trustedform.demo.presentation.widget.CustomLabeledTextEdit
+            android:id="@+id/layoutDemoEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            app:hintText="@{@string/demo_label_email}"
+            app:imeAction="@{EditorInfo.IME_ACTION_NEXT}"
+            app:labeledText="@={viewModel.email}"
+            app:layout_constraintBottom_toTopOf="@id/layoutDemoPhone"
+            app:layout_constraintEnd_toEndOf="@id/layoutDemoFullName"
+            app:layout_constraintStart_toStartOf="@id/layoutDemoFullName"
+            app:layout_constraintTop_toBottomOf="@id/layoutDemoFullName"
+            app:lines="@{1}" />
+
+        <com.activeprospect.trustedform.demo.presentation.widget.CustomLabeledTextEdit
+            android:id="@+id/layoutDemoPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:hintText="@{@string/demo_label_phone_number}"
+            app:imeAction="@{EditorInfo.IME_ACTION_DONE}"
+            app:labeledText="@={viewModel.phone}"
+            app:layout_constraintBottom_toTopOf="@id/widgetFormDemo"
+            app:layout_constraintEnd_toEndOf="@id/layoutDemoEmail"
+            app:layout_constraintStart_toStartOf="@id/layoutDemoEmail"
+            app:layout_constraintTop_toBottomOf="@id/layoutDemoEmail"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:lines="@{1}" />
+
+        <com.activeprospect.trustedform.sdk.api.view.TrustedFormWidget
+            android:id="@+id/widgetFormDemo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:visibility="@{isLoading ? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/layoutDemoPhone"
+            app:layout_constraintStart_toStartOf="@id/layoutDemoPhone"
+            app:layout_constraintTop_toBottomOf="@id/layoutDemoPhone"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

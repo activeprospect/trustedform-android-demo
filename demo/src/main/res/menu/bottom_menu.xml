@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_bottom_home"
+        android:title="@string/label_home" />
+
+    <item
+        android:id="@+id/demoFormFragment"
+        android:icon="@drawable/ic_bottom_demo"
+        android:title="@string/label_try_demo" />
+    <item
+        android:id="@+id/contactFragment"
+        android:icon="@drawable/ic_bottom_contact"
+        android:title="@string/label_contact" />
+</menu>

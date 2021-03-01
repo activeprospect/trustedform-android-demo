@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_introduction"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.activeprospect.trustedform.demo.presentation.view.splash.SplashFragment"
+        android:label="@string/label_loading"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_toWhoIsFragment"
+            app:destination="@id/whoIsFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/whoIsFragment"
+        android:name="com.activeprospect.trustedform.demo.presentation.view.whois.WhoIsFragment"
+        android:label="@string/label_who_is"
+        tools:layout="@layout/fragment_who_is" />
+
+    <fragment
+        android:id="@+id/whatIsFragment"
+        android:name="com.activeprospect.trustedform.demo.presentation.view.whatis.WhatIsFragment"
+        android:label="@string/label_demo_app"
+        tools:layout="@layout/fragment_what_is">
+        <action
+            android:id="@+id/action_whatIsFragment_to_bottomMenuFragment"
+            app:destination="@id/bottomMenuFragment"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.activeprospect.trustedform.demo.presentation.view.signin.SignInFragment"
+        android:label="@string/label_sign_in"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_bottomMenuFragment"
+            app:destination="@id/bottomMenuFragment"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
