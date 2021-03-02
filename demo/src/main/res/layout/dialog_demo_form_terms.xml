@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <View
+            android:id="@+id/backgroundDemoDialogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/blue"
+            app:layout_constraintBottom_toBottomOf="@id/textDemoDialogTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textDemoDialogTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="@dimen/padding_large"
+            android:text="@string/dialog_title"
+            android:textAppearance="@style/Text.Title.Secondary.ProximaNova.SemiBold"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/textDemoDialogSubtitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textDemoDialogSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_xxlarge"
+            android:gravity="center"
+            android:paddingBottom="@dimen/padding_medium"
+            android:text="@string/dialog_subtitle"
+            android:textAppearance="@style/Text.Caption.Secondary.ProximaNova.Regular"
+            app:layout_constraintBottom_toTopOf="@id/buttonDemoDialogOkay"
+            app:layout_constraintEnd_toEndOf="@id/textDemoDialogTitle"
+            app:layout_constraintStart_toStartOf="@id/textDemoDialogTitle"
+            app:layout_constraintTop_toBottomOf="@id/textDemoDialogTitle" />
+
+        <View
+            android:id="@+id/backgroundDemoDialogButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/dusty_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textDemoDialogSubtitle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonDemoDialogOkay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/demo_dialog_button_margin"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:backgroundTint="@color/primary"
+            android:text="@string/dialog_button_ok"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/textDemoDialogSubtitle"
+            app:layout_constraintStart_toStartOf="@id/textDemoDialogSubtitle"
+            app:layout_constraintTop_toTopOf="@id/backgroundDemoDialogButton"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

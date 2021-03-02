@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Text sizes -->
+    <dimen name="headline">28sp</dimen>
+    <dimen name="headline2">24sp</dimen>
+    <dimen name="subtitle">14sp</dimen>
+    <dimen name="subtitle2">12sp</dimen>
+    <dimen name="subtitle3">10sp</dimen>
+    <dimen name="caption">11sp</dimen>
+    <dimen name="input">16sp</dimen>
+    <dimen name="title">17sp</dimen>
+    <dimen name="title2">15sp</dimen>
+    <dimen name="title3">13sp</dimen>
+
+    <!-- Margins & paddings -->
+
+    <dimen name="margin_xxlarge">28dp</dimen>
+    <dimen name="margin_xlarge">24dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_small">12dp</dimen>
+    <dimen name="margin_xsmall">8dp</dimen>
+
+    <dimen name="padding_large">20dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_small">12dp</dimen>
+    <dimen name="padding_xsmall">8dp</dimen>
+
+    <dimen name="width_xxxxxlarge">40dp</dimen>
+    <dimen name="width_200dp">200dp</dimen>
+
+    <dimen name="margin_37dp">37dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
+    <dimen name="margin_56dp">56dp</dimen>
+    <dimen name="margin_67dp">67dp</dimen>
+    <dimen name="margin_76dp">76dp</dimen>
+    <dimen name="margin_80dp">80dp</dimen>
+
+    <dimen name="padding_65dp">65dp</dimen>
+    <dimen name="padding_5dp">5dp</dimen>
+
+    <dimen name="card_corner_radius_medium">10dp</dimen>
+    <dimen name="card_corner_radius_small">4dp</dimen>
+
+    <!--  splash screen  -->
+    <dimen name="splash_loading_margin_top">100dp</dimen>
+
+    <!--  Demo Dialog Screen  -->
+    <dimen name="demo_dialog_button_margin">87dp</dimen>
+
+    <!--  Home  -->
+    <dimen name="default_view_group_elevation">10dp</dimen>
+    <dimen name="default_card_translation_z">4dp</dimen>
+
+    <dimen name="default_horizontal_margin">16dp</dimen>
+    <dimen name="default_top_margin">48dp</dimen>
+    <dimen name="default_corner_radius">16dp</dimen>
+
+    <dimen name="fullscreen_bottom_image_height">510dp</dimen>
+
+    <dimen name="view_pager_dot_thickness">4dp</dimen>
+    <dimen name="view_pager_dot_height">8dp</dimen>
+
+    <dimen name="fullscreen_text_size">16sp</dimen>
+    <dimen name="header_text_size">24sp</dimen>
+    <dimen name="subheader_text_size">18sp</dimen>
+    <dimen name="link_text_size">17sp</dimen>
+    <dimen name="description_text_size">16sp</dimen>
+    <dimen name="label_text_size">14sp</dimen>
+    <dimen name="note_text_size">14sp</dimen>
+    <dimen name="fineprint_text_size">12sp</dimen>
+</resources>

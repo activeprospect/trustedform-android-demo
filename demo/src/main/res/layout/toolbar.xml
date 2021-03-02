@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_height="?android:attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/toolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@{title}"
+            android:textAppearance="@style/Text.Input.Primary.ProximaNova.Regular"
+            android:textColor="@color/white"
+            tools:text="Hehehe" />
+
+        <TextView
+            android:id="@+id/toolbarAction"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:gravity="center"
+            android:textAppearance="@style/Text.Input.Primary.ProximaNova.Regular"
+            android:textColor="@color/blue"
+            tools:text="Hehehe" />
+
+    </androidx.appcompat.widget.Toolbar>
+</layout>

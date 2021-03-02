@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">TrustedForm</string>
+
+    <string name="splash_description">The highest standard for independent proof of consent.</string>
+
+    <string name="why_trusted_toolbar_title">Why TrustedForm</string>
+    <string name="why_trusted_toolbar_button">Skip</string>
+    <string name="why_trusted_header">Why is TrustedForm so important?</string>
+    <string name="why_trusted_page_title_1">Third party documentation you can trust.  </string>
+    <string name="why_trusted_page_description_1">TrustedForm independently collects information about who filled out a form, when, and where. We don’t rely on vendor-supplied data. </string>
+    <string name="why_trusted_page_title_2">The highest standard of proof available.</string>
+    <string name="why_trusted_page_description_2">TrustedForm provides proof that prior express written consent was obtained before you contact a lead.</string>
+    <string name="why_trusted_page_title_3">TCPA compliant protection. </string>
+    <string name="why_trusted_page_description_3">TrustedForm certificates are tamper-proof. In the event of a TCPA complaint, you can easily view and share a certificate with your legal team.</string>
+    <string name="why_trusted_page_next">Next Step</string>
+    <string name="why_trusted_page_benefit">Benefit of the SDK</string>
+
+    <string name="trusted_email">support@activeprospect.com</string>
+
+    <string name="loading">loading...</string>
+    <string name="continue_text">Continue</string>
+    <string name="skip">Skip</string>
+
+    <!-- Labels   -->
+    <string name="label_loading">Loading...</string>
+    <string name="label_who_is">Who is ActiveProspect?</string>
+    <string name="label_demo_app">TrustedForm Demo App</string>
+    <string name="label_sign_in">Sign In</string>
+    <string name="label_sign_up">Sign Up</string>
+    <string name="label_demo_form">Demo Form</string>
+    <string name="label_try_demo">Try Demo</string>
+    <string name="label_demo_form_completed">Demo Form Completed</string>
+    <string name="label_home">Home</string>
+    <string name="label_how_to_implement">How To Implement</string>
+    <string name="label_contact">Contact Us</string>
+
+    <!--  Demo Form Screen  -->
+    <string name="demo_header">Demo Form</string>
+    <string name="demo_subheader">Fill out the form below and we’ll email you the TrustedForm certificate associated with your sign up.</string>
+    <string name="demo_label_full_name">Full Name:</string>
+    <string name="demo_label_email">Email: </string>
+    <string name="demo_label_phone_number">Phone Number: </string>
+    <string name="demo_button_submit">Submit</string>
+
+    <string name="demo_completed_header">Thanks for trying the TrustedForm demo!</string>
+    <string name="demo_completed_subheader">You will receive an email from %1$s shortly (if you don’t see it, check your spam folder). Click the link in the email to view the TrustedForm certificate. </string>
+
+    <!--  Who Is Fragment  -->
+    <string name="who_is_header">Who is ActiveProspect?</string>
+    <string name="who_is_subheader">We provide companies with complete legal, financial and brand TCPA protection. We make consent-based marketing the best channel to acquire customers who want to be contacted by you. </string>
+
+    <!--  Checkable Terms Layout  -->
+    <string name="checkable_terms_text">I understand that the TrustedForm certificate is sent to the email address I provided above and I will receive product updates as they are released. I can unsubscribe from product updates at any time.</string>
+
+    <!--  Sign In Screen  -->
+    <string name="sign_in_header">Welcome.</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="sign_in_email_hint">Email</string>
+    <string name="sign_in_forgot_password">Forgot password?</string>
+    <string name="sign_in_no_account">Don’t have an account?</string>
+    <string name="sign_in_sing_up">Sign Up</string>
+    <string name="sign_in_password_hint">Password</string>
+    <string name="sign_in_subheader">Si sine metu degendae praesidia firmissima filium morte multavit si sine causa, nollem. At magnum periculum adiit in quo enim ad modum, quaeso, interpretaris? sicine eos. Probabo, inquit, sic agam, ut summo bono, dolorem ipsum, quia non quo quaerimus.</string>
+
+    <!--  Contact Screen  -->
+    <string name="contact_header">Get in touch.</string>
+    <string name="contact_subheader">Questions? We are here to help! Send us a message and we\'ll respond as soon as we can, or give us a call at </string>
+    <string name="contact_phone_number">512–394–4546</string>
+    <string name="contact_button_text">Send Message</string>
+    <string name="contact_first_name_hint">First Name:</string>
+    <string name="contact_last_name_hint">Last Name:</string>
+    <string name="contact_work_email_hint">Work Email:</string>
+    <string name="contact_phone_number_hint">Phone Number:</string>
+    <string name="contact_message_hint">Message:</string>
+    <string name="contact_email_body_template">First Name:\n%1$s\n\nLast Name:\n%2$s\n\nPhone Number:\n%3$s\n\nMessage:\n%4$s</string>
+
+    <!--  Home Fragment  -->
+    <string name="home_fragment_try_demo_card_header">Want to see how TrustedForm works on a mobile app?</string>
+    <string name="home_fragment_try_demo_card_subheader">Tap here to fill out a sample form and see a sample TrustedForm certificate.</string>
+    <string name="home_fragment_try_demo_card_try_demo">Try The Demo</string>
+    <string name="home_fragment_learn_more_card_header">Learn More</string>
+    <string name="home_fragment_learn_more_card_title">Learn more about TrustedForm for mobile apps.</string>
+    <string name="home_fragment_learn_more_card_subtitle">Explore FAQs, technical documentation, and more.</string>
+
+</resources>

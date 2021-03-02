@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/light_blue</color>
+    <color name="colorPrimaryDark">@color/dimGray</color>
+    <color name="colorAccent">@color/brand_navbars</color>
+
+    <!-- Color system -->
+    <color name="colorTextPrimary">@color/black</color>
+    <color name="colorTextSecondary">@color/dimGray</color>
+    <color name="colorTextAccent">@color/brand_navbars</color>
+
+    <color name="primary">#2DCC70</color>
+    <color name="brand_navbars">#263548</color>
+    <color name="dusty_gray">#F9FAFC</color>
+    <color name="background">#E5E5E5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="headline">#454F5B</color>
+    <color name="dimGray">#808080</color>
+    <color name="blue">#21A7F0</color>
+    <color name="light_blue">#22A7F0</color>
+
+    <color name="colorDisabled">#A8B7C7</color>
+    <color name="colorEnabled">@color/primary</color>
+
+    <color name="transparent">#00000000</color>
+</resources>

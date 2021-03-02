@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textWhoIsHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_76dp"
+            android:text="@string/who_is_header"
+            android:textAppearance="@style/Text.Headline.Primary.ProximaNova.Bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textWhoIsSubheader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:text="@string/who_is_subheader"
+            android:textAppearance="@style/Text.Subtitle.Primary.ProximaNova.Regular"
+            app:layout_constraintEnd_toEndOf="@id/textWhoIsHeader"
+            app:layout_constraintStart_toStartOf="@id/textWhoIsHeader"
+            app:layout_constraintTop_toBottomOf="@id/textWhoIsHeader" />
+
+        <ImageView
+            android:id="@+id/imageWhoIs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_56dp"
+            app:layout_constraintEnd_toEndOf="@id/textWhoIsSubheader"
+            app:layout_constraintStart_toStartOf="@id/textWhoIsSubheader"
+            app:layout_constraintTop_toBottomOf="@id/textWhoIsSubheader"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:srcCompat="@drawable/ic_who_is" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonWhoIsContinue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:backgroundTint="@color/primary"
+            android:text="@string/continue_text"
+            android:textAllCaps="false"
+            android:layout_marginBottom="@dimen/margin_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imageWhoIs"
+            app:layout_constraintStart_toStartOf="@id/imageWhoIs"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

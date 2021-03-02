@@ -1,0 +1,39 @@
+ext {
+
+    kotlinVersion = '1.4.30'
+    gradleVersion = '4.1.2'
+
+    androidVersion = [
+            compileSdk                  : 29,
+            minSdk                      : 21,
+            targetSdk                   : 29,
+            buildTools                  : '30.0.2',
+            versionName                 : '0.1.0',
+            applicationId               : 'com.activeprospect.trustedform.demo.dev'
+    ]
+
+    libVersion = [
+            latestSdkVersion            : '0.1.0',
+            appCenter                   : '4.1.0',
+            core                        : '1.3.2',
+            appCompat                   : '1.2.0',
+            appCenterSdk                : '4.1.0',
+            lifecycle                   : '2.2.0',
+            constraint                  : '2.0.2',
+            coroutines                  : '1.4.2',
+            dagger                      : '2.29.1',
+            retrofit                    : '2.9.0',
+            loggingInterceptor          : '4.9.0',
+            okHttp                      : '4.9.0',
+            moshi                       : '1.8.0',
+            glide                       : '4.11.0',
+            materialComponents          : '1.2.1',
+            navigation                  : '2.3.1',
+            mockk                       : '1.10.0',
+            coroutinesTest              : '1.4.0',
+            leakCanary                  : '2.3',
+            ktlint                      : '0.29.0',
+            mavenGradle                 : '2.1',
+            serialization               : '1.0.1'
+    ]
+}
