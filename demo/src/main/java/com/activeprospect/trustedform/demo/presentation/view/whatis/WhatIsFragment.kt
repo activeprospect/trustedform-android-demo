@@ -8,7 +8,6 @@ import com.activeprospect.trustedform.R
 import com.activeprospect.trustedform.databinding.FragmentWhatIsBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.di.whatIs.WhatIsInjector
-import com.activeprospect.trustedform.demo.presentation.view.main.MainFragmentNavigator
 import com.activeprospect.trustedform.demo.presentation.view.main.MainNavigator
 import com.google.android.material.tabs.TabLayoutMediator
 import javax.inject.Inject
