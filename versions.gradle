@@ -5,10 +5,10 @@ ext {
 
     androidVersion = [
             compileSdk                  : 29,
-            minSdk                      : 21,
+            minSdk                      : 24,
             targetSdk                   : 29,
             buildTools                  : '30.0.2',
-            versionName                 : '0.1.0',
+            versionName                 : '0.1.1',
             applicationId               : 'com.activeprospect.trustedform.demo.dev'
     ]
 

@@ -1,11 +1,6 @@
 package com.activeprospect.trustedform.demo.presentation.view.main
 
 import android.content.Context
-import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
 import androidx.core.view.isVisible
 import androidx.navigation.findNavController
 import com.activeprospect.trustedform.R

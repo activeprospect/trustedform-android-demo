@@ -26,7 +26,6 @@ class ContactFragment(override val layoutId: Int = R.layout.fragment_contact) :
     private val injector: ContactInjector
         get() = baseActivity.application as ContactInjector
 
-
     @Inject
     lateinit var navigator: MainNavigator
 

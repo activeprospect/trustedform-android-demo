@@ -8,7 +8,6 @@ import com.activeprospect.trustedform.databinding.FragmentHomeBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.di.home.HomeInjector
 import com.activeprospect.trustedform.demo.presentation.view.bottommenu.BottomMenuNavigator
-import com.activeprospect.trustedform.demo.presentation.view.main.MainNavigator
 import javax.inject.Inject
 
 class HomeFragment(override val layoutId: Int = R.layout.fragment_home) :
@@ -30,7 +29,7 @@ class HomeFragment(override val layoutId: Int = R.layout.fragment_home) :
         setupView()
     }
 
-    private fun setupView() = with(binding){
+    private fun setupView() = with(binding) {
         buttonHomeCardDemo.setOnClickListener { navigator.navigateToDemoForm() }
     }
 }

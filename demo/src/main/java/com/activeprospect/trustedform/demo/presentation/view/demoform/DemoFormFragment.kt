@@ -14,11 +14,8 @@ import com.activeprospect.trustedform.demo.common.extensions.hideKeyboard
 import com.activeprospect.trustedform.demo.common.viewmodels.ViewModelFactory
 import com.activeprospect.trustedform.demo.di.demoform.DemoFormInjector
 import com.activeprospect.trustedform.demo.presentation.view.bottommenu.BottomMenuNavigator
-import com.activeprospect.trustedform.sdk.api.TrustedForm
 import com.activeprospect.trustedform.sdk.api.TrustedFormInterface
-import com.activeprospect.trustedform.sdk.api.model.TrustedFormEvent
 import com.activeprospect.trustedform.sdk.api.model.extension.isSensitive
-import kotlinx.android.synthetic.main.custom_labeled_text_edit.view.*
 import javax.inject.Inject
 
 class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form) :
@@ -54,26 +51,6 @@ class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form)
     private fun showLoading(isLoading: Boolean) = run { binding.isLoading = isLoading }
 
     private fun setupListeners() = with(binding) {
-        // Handling Focus Change Events in TrustedForm
-//        root.viewTreeObserver.addOnGlobalFocusChangeListener { view, view2 ->
-//            trustedForm.postEvent(
-//                fragmentViewModel.cert ?: return@addOnGlobalFocusChangeListener,
-//                TrustedFormEvent.TrustedFormFocusEvent(view2.id.toString())
-//            )
-//        }
-
-        // Handling Input Change Events in TrustedForm
-//        textDemoFullName.doAfterTextChanged { text ->
-//            trustedForm.postEvent(
-//                fragmentViewModel.cert ?: return@doAfterTextChanged,
-//                TrustedFormEvent.TrustedFormInputChangeEvent(
-//                    textDemoFullName.id.toString(),
-//                    textDemoFullName.labelFor.toString(),
-//                    text.toString()
-//                )
-//            )
-//        }
-
         widgetFormDemo.setOnConsentChangeListener { isChecked ->
             Log.d("TESTING", "Widget is checkmark checked $isChecked ")
         }
@@ -83,7 +60,7 @@ class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form)
             navigator.navigateToDemoFormCompleted()
         }
 
-        layoutDemoPhone.textInput.setOnEditorActionListener { _, actionId, _ ->
+        textDemoPhoneInput.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 hideKeyboard()
                 layoutDemoMain.requestFocus()
@@ -92,10 +69,9 @@ class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form)
         }
     }
 
-
     private fun setupTrustedFrom() = with(binding) {
         showLoading(true)
-        layoutDemoEmail.isSensitive = true
+        textDemoEmailInput.isSensitive = true
 
         val consentText = getString(R.string.checkable_terms_text)
 

@@ -12,7 +12,6 @@ import androidx.databinding.InverseBindingListener
 import com.activeprospect.trustedform.databinding.CustomLabeledTextEditBinding
 import kotlinx.android.synthetic.main.custom_labeled_text_edit.view.*
 
-
 class CustomLabeledTextEdit @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
