@@ -13,7 +13,7 @@
 ![Gradle sync](/images/2-as-sync.png)
 
 ## AVD Deployment
-**Note: The following assumes you do NOT have an AVD preconfigured If you already have your AVD configured then skip to step 8**
+**Note: The following assumes you do NOT have an AVD preconfigured If you already have your AVD configured then skip to step 12**
 7. Open the AVD Manager by clicking Tools > AVD Manager.
 ![Your AVDs](3-avd-manager_2x.png)
 
@@ -31,12 +31,11 @@
     The new AVD appears in the Your Virtual Devices page or the Select Deployment Target dialog.
 ![AVD](6-avd-manager-system_2x.png)
 
-
 ## Physical Device
 
-7. Connect your Android device through USB - you should be able to select it from Android Studio devices list (see screenshot). If it's not there you can try running the `Tools > Troubleshoot Device Connections` tool (aka `Connection Assistant`). You could also use an emulator, but on Android it's a bit tricky topic - let me know if you need help with setting one up.
+12. Connect your Android device through USB - you should be able to select it from Android Studio devices list (see screenshot). If it's not there you can try running the `Tools > Troubleshoot Device Connections` tool (aka `Connection Assistant`). You could also use an emulator, but on Android it's a bit tricky topic - let me know if you need help with setting one up.
 [avd physicaldeveice](6-as-physical-device.png
-8. You can build and run the project with the `Run` button:
+13. You can build and run the project with the `Run` button:
 
 ![Physical Device](7-as-physical-device.png)
 
