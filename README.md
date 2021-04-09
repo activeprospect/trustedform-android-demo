@@ -5,7 +5,7 @@
 1. Download and install newest Android Studio: https://developer.android.com/studio
 2. On the initial `Welcome to Android Studio` screen: click `Configure > SDK Manager` option
 3. On the `SDK Manager > SDK Platforms` tab: check `Android 10.0 (Q)` option, click `Apply` and follow the instructions if necessary.
-![SDK Manager](/images/1-avd-manager_2x.png)
+![SDK Manager](/images/1-as-sdk-manager-1.png )
 
 4. On the `SDK Manager > SDK Tools` tab: check the `Show Package Details` checkbox, select `Android SDK Build-Tools 30.0.2` and click `Apply`
 5. Back on the `Welcome to Android Studio` click `Open an Exisiting Project` and select the Demo's folder
@@ -26,19 +26,23 @@
   The System Image page appears.
 ![AVD System Image](/images/5-avd-system-image.png)
 
+
 10. Select a system image for **API level 30** , and then click Next.
 11. Change AVD properties as needed, and then click Finish.
     Click Show Advanced Settings to show more settings, such as the skin.
     The new AVD appears in the Your Virtual Devices page or the Select Deployment Target dialog.
 ![AVD](/images/6-avd-manager-system_2x.png)
 
-## Physical Device
+
+## Physical Device 
+  ** If you are deploying to AVD then skip step 12 **  
+12. Connect your Android device through USB - you should be able to select it from Android Studio devices list (see screenshot). If it's not there you can try running the `Tools > Troubleshoot Device Connections` tool (aka `Connection Assistant`). You could also use an emulator, but on Android it's a bit tricky topic - let me know if you need help with setting one up.
+![Physical Device](/images/7-as-physical-device.png)
 
 12. Connect your Android device through USB - you should be able to select it from Android Studio devices list (see screenshot). If it's not there you can try running the `Tools > Troubleshoot Device Connections` tool (aka `Connection Assistant`). You could also use an emulator, but on Android it's a bit tricky topic - let me know if you need help with setting one up.
 ![Physical Device](/images/7-as-physical-device.png)
 
 13. You can build and run the project with the `Run` button:
-
 
 ![Run](/images/as-run.png)
 
