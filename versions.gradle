@@ -5,15 +5,15 @@ ext {
 
     androidVersion = [
             compileSdk                  : 29,
-            minSdk                      : 24,
+            minSdk                      : 21,
             targetSdk                   : 29,
             buildTools                  : '30.0.2',
-            versionName                 : '0.1.1',
-            applicationId               : 'com.activeprospect.trustedform.demo.dev'
+            versionName                 : '1.0',
+            applicationId               : 'com.activeprospect.trustedform.demo',
     ]
 
     libVersion = [
-            latestSdkVersion            : '0.1.0',
+            latestSdkVersion            : '0.2.4',
             appCenter                   : '4.1.0',
             core                        : '1.3.2',
             appCompat                   : '1.2.0',
@@ -34,6 +34,7 @@ ext {
             leakCanary                  : '2.3',
             ktlint                      : '0.29.0',
             mavenGradle                 : '2.1',
-            serialization               : '1.0.1'
+            serialization               : '1.0.1',
+            timber                      : '4.7.1'
     ]
 }

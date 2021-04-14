@@ -2,9 +2,13 @@ package com.activeprospect.trustedform.demo.presentation.view.contact
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.core.content.ContextCompat
@@ -51,21 +55,29 @@ class ContactFragment(override val layoutId: Int = R.layout.fragment_contact) :
     }
 
     private fun setupSpan() {
-        val subheader = requireContext().getString(R.string.contact_subheader)
-        val phoneNumber = requireContext().getString(R.string.contact_phone_number)
+        val subheader = getString(R.string.contact_subheader)
+        val phoneNumber = getString(R.string.contact_phone_number)
         val linkTextColor = ContextCompat.getColor(requireContext(), R.color.blue)
+
+        val spannablePhoneNumber = Spannable.Factory.getInstance().newSpannable(phoneNumber)
+        spannablePhoneNumber.setSpan(object : ClickableSpan() {
+            override fun onClick(p0: View) = openDialer(phoneNumber)
+        }, 0, phoneNumber.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
         val spannableString = SpannableStringBuilder().apply {
             append(subheader)
             append(" ")
             append(
-                phoneNumber,
+                spannablePhoneNumber,
                 ForegroundColorSpan(linkTextColor),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             )
         }
 
-        binding.textContactSubheader.text = spannableString
+        with(binding.textContactSubheader) {
+            text = spannableString
+            movementMethod = LinkMovementMethod.getInstance()
+        }
     }
 
     private fun setListeners() = with(binding) {
@@ -77,6 +89,7 @@ class ContactFragment(override val layoutId: Int = R.layout.fragment_contact) :
             R.string.contact_email_body_template,
             fragmentViewModel.firstName,
             fragmentViewModel.lastName,
+            fragmentViewModel.workEmail,
             fragmentViewModel.phoneNumber,
             fragmentViewModel.message
         ).trim()
@@ -90,5 +103,11 @@ class ContactFragment(override val layoutId: Int = R.layout.fragment_contact) :
         if (emailIntent.resolveActivity(requireContext().packageManager) != null) {
             startActivity(emailIntent)
         }
+    }
+
+    private fun openDialer(phoneNumber: String) {
+        val dialUri = Uri.parse(getString(R.string.template_dialer_telephone, phoneNumber))
+        val intent = Intent(Intent.ACTION_DIAL, dialUri)
+        startActivity(intent)
     }
 }

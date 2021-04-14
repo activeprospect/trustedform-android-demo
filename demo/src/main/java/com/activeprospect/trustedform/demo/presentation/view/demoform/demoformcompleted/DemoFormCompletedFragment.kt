@@ -53,6 +53,6 @@ class DemoFormCompletedFragment(override val layoutId: Int = R.layout.fragment_d
             append(subheaderString[1])
         }
 
-//        binding.textDemoCompleteSubheader.text = spannableString
+        binding.textDemoCompleteSubheader.text = spannableString
     }
 }

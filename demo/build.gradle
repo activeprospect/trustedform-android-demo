@@ -1,41 +1,40 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-android-extensions'
-    id 'kotlin-kapt'
-}
+apply plugin: 'com.android.application'
+apply from: "$rootDir/shared.gradle"
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion androidVersion.compileSdk
-    buildToolsVersion androidVersion.buildTools
-
-    defaultConfig {
-        applicationId androidVersion.applicationId
-        minSdkVersion androidVersion.minSdk
-        targetSdkVersion androidVersion.targetSdk
-        versionCode 1
-        versionName androidVersion.versionName
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
+    defaultConfig { applicationId androidVersion.applicationId }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
-    }
-    buildFeatures {
-        viewBinding true
-        dataBinding = true
+
+    flavorDimensions "version"
+    productFlavors {
+        dev {
+            dimension "version"
+            buildConfigField "String", "API_URL", '"https://engage.activeprospect.com"'
+            buildConfigField "String", "CERTIFICATE_URL", '"https://cert.staging.trustedform.com/"'
+        }
+        prod {
+            dimension "version"
+            buildConfigField "String", "API_URL", '"https://engage.activeprospect.com"'
+            buildConfigField "String", "CERTIFICATE_URL", '"https://cert.trustedform.com/"'
+        }
+        stage {
+            dimension "version"
+            buildConfigField "String", "API_URL", '"https://engage.activeprospect.com"'
+            buildConfigField "String", "CERTIFICATE_URL", '"https://cert.staging.trustedform.com/"'
+        }
     }
 }
 
@@ -45,16 +44,23 @@ dependencies {
     implementation "androidx.core:core-ktx:$libVersion.core"
     implementation "androidx.appcompat:appcompat:$libVersion.appCompat"
 
+    implementation "active-prospect:trusted-form:$libVersion.latestSdkVersion"
+
     implementation "com.google.android.material:material:$libVersion.materialComponents"
     implementation "androidx.constraintlayout:constraintlayout:$libVersion.constraint"
-
-    implementation "ActiveProspect:sdk-dev:$libVersion.latestSdkVersion" transitive true
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$libVersion.coroutines"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$libVersion.coroutines"
 
     implementation "androidx.navigation:navigation-fragment-ktx:$libVersion.navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$libVersion.navigation"
+
+    implementation "com.squareup.retrofit2:retrofit:$libVersion.retrofit"
+    implementation "com.squareup.okhttp3:okhttp:$libVersion.okHttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$libVersion.loggingInterceptor"
+    implementation "com.squareup.moshi:moshi-kotlin:$libVersion.moshi"
+    implementation "com.squareup.moshi:moshi:$libVersion.moshi"
+    implementation "com.squareup.retrofit2:converter-moshi:$libVersion.retrofit"
 
     implementation "com.google.dagger:dagger:$libVersion.dagger"
     kapt "com.google.dagger:dagger-compiler:$libVersion.dagger"
