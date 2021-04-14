@@ -15,6 +15,7 @@
 
     <!-- Margins & paddings -->
 
+    <dimen name="margin_xxxlarge">32dp</dimen>
     <dimen name="margin_xxlarge">28dp</dimen>
     <dimen name="margin_xlarge">24dp</dimen>
     <dimen name="margin_large">20dp</dimen>

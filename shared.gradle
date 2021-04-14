@@ -1,0 +1,29 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion androidVersion.compileSdk
+    buildToolsVersion androidVersion.buildTools
+
+    defaultConfig {
+        minSdkVersion androidVersion.minSdk
+        targetSdkVersion androidVersion.targetSdk
+        versionCode 1
+        versionName androidVersion.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}

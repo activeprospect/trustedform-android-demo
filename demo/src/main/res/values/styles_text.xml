@@ -41,6 +41,10 @@
         <item name="fontFamily">@font/proxima_nova_bold</item>
     </style>
 
+    <style name="Text.Headline.Primary.ProximaNova.Regular">
+        <item name="fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
     <style name="Text.Headline2.Primary.ProximaNova.Bold">
         <item name="fontFamily">@font/proxima_nova_bold</item>
     </style>

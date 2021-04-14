@@ -1,21 +1,21 @@
 package com.activeprospect.trustedform.demo.presentation.view.demoform
 
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.viewModels
-import com.activeprospect.trustedform.BuildConfig
 import com.activeprospect.trustedform.R
 import com.activeprospect.trustedform.databinding.FragmentDemoFormBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.common.extensions.hideKeyboard
+import com.activeprospect.trustedform.demo.common.livedata.Resource
 import com.activeprospect.trustedform.demo.common.viewmodels.ViewModelFactory
 import com.activeprospect.trustedform.demo.di.demoform.DemoFormInjector
 import com.activeprospect.trustedform.demo.presentation.view.bottommenu.BottomMenuNavigator
-import com.activeprospect.trustedform.sdk.api.TrustedFormInterface
-import com.activeprospect.trustedform.sdk.api.model.extension.isSensitive
+import com.activeprospect.trustedform.sdk.api.TrustedForm
+import com.activeprospect.trustedform.sdk.api.extensions.isSensitive
 import javax.inject.Inject
 
 class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form) :
@@ -26,9 +26,6 @@ class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form)
 
     @Inject
     lateinit var navigator: BottomMenuNavigator
-
-    @Inject
-    lateinit var trustedForm: TrustedFormInterface
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -48,22 +45,27 @@ class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form)
         setupObservers()
     }
 
+    override fun onDestroyView() {
+        TrustedForm.default.stopTracking(null, requireActivity())
+        super.onDestroyView()
+    }
+
     private fun showLoading(isLoading: Boolean) = run { binding.isLoading = isLoading }
 
     private fun setupListeners() = with(binding) {
         widgetFormDemo.setOnConsentChangeListener { isChecked ->
-            Log.d("TESTING", "Widget is checkmark checked $isChecked ")
+            fragmentViewModel.setConsentChecked(isChecked)
         }
 
         widgetFormDemo.setOnSubmitListener {
-            layoutDemoMain.requestFocus()
-            navigator.navigateToDemoFormCompleted()
+            fragmentViewModel.requestCertificate()
+            showLoading(true)
         }
 
-        textDemoPhoneInput.setOnEditorActionListener { _, actionId, _ ->
+        textEditDemoFormPhone.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 hideKeyboard()
-                layoutDemoMain.requestFocus()
+                textEditDemoFormPhone.clearFocus()
             }
             true
         }
@@ -71,23 +73,39 @@ class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form)
 
     private fun setupTrustedFrom() = with(binding) {
         showLoading(true)
-        textDemoEmailInput.isSensitive = true
+        textEditDemoFormEmail.isSensitive = true
 
         val consentText = getString(R.string.checkable_terms_text)
 
-        trustedForm.configure(BuildConfig.APPLICATION_ID, requireContext())
-
-        trustedForm.createCertificate(consentText) { cert ->
-
+        TrustedForm.default.createCertificate(consentText) { cert ->
+            widgetFormDemo.initialize(cert)
+            TrustedForm.default.startTracking(cert, requireActivity())
             showLoading(false)
             fragmentViewModel.cert = cert
-            widgetFormDemo.initialize(cert)
         }
     }
 
-    private fun setupObservers() {
-        fragmentViewModel.validationStatus.observe(viewLifecycleOwner) { validationSuccess ->
+    private fun setupObservers() = with(fragmentViewModel) {
+        response.observe(viewLifecycleOwner) { response ->
+            if (response is Resource.Success) response.dataEvent?.let {
+                cert?.let { TrustedForm.default.stopTracking(it, requireActivity()) }
+                navigator.navigateToDemoFormCompleted()
+            } else if (response is Resource.Error) response.errorEvent?.let {
+                showErrorDialog()
+            }
+            showLoading(false)
+        }
+
+        validationStatus.observe(viewLifecycleOwner) { validationSuccess ->
             binding.widgetFormDemo.isSubmitEnabled = validationSuccess
         }
+    }
+
+    private fun showErrorDialog() {
+        AlertDialog.Builder(requireContext())
+            .setMessage(R.string.submit_certificate_error)
+            .setPositiveButton(R.string.ok) { dialogInterface, _ -> dialogInterface.dismiss() }
+            .create()
+            .show()
     }
 }

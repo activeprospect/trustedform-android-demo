@@ -28,18 +28,19 @@
             android:id="@+id/layoutDemoMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:background="@color/white"
             android:elevation="@dimen/default_view_group_elevation">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/progressDemo"
+                android:id="@+id/layoutProgressDemo"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:elevation="@dimen/default_view_group_elevation"
+                android:layout_height="match_parent"
                 android:background="@color/white"
-                android:visibility="@{isLoading ? View.VISIBLE : View.GONE}">
+                android:elevation="@dimen/default_view_group_elevation"
+                android:visibility="@{isLoading ? View.VISIBLE : View.GONE}"
+                tools:visibility="gone">
 
                 <ImageView
                     android:id="@+id/imageProgress"
@@ -74,7 +75,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/margin_large"
-                android:layout_marginTop="@dimen/margin_67dp"
                 android:text="@string/demo_header"
                 android:textAppearance="@style/Text.Headline.Primary.ProximaNova.Bold"
                 app:layout_constraintBottom_toTopOf="@id/textDemoSubheader"
@@ -88,7 +88,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
-                android:text="@string/demo_subheader"
+                app:htmlText="@{@string/demo_subheader}"
                 android:textAppearance="@style/Text.Subtitle.Primary.ProximaNova.Regular"
                 app:layout_constraintBottom_toTopOf="@id/textDemoFullNameLabel"
                 app:layout_constraintEnd_toEndOf="@id/textDemoHeader"
@@ -101,16 +101,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
-                android:text="@string/demo_label_full_name"
+                android:labelFor="@id/textEditDemoFormFullName"
+                android:text="@string/demo_label_first_name"
                 android:textAppearance="@style/Text.Subtitle.Secondary.ProximaNova.Light"
-                app:layout_constraintBottom_toTopOf="@id/textDemoFullNameInput"
+                app:layout_constraintBottom_toTopOf="@id/textEditDemoFormFullName"
                 app:layout_constraintEnd_toEndOf="@id/textDemoSubheader"
                 app:layout_constraintStart_toStartOf="@id/textDemoSubheader"
                 app:layout_constraintTop_toBottomOf="@id/textDemoSubheader"
-                tools:text="@string/demo_label_full_name" />
+                tools:text="@string/demo_label_first_name" />
 
             <EditText
-                android:id="@+id/textDemoFullNameInput"
+                android:id="@+id/textEditDemoFormFullName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xsmall"
@@ -130,17 +131,18 @@
                 android:id="@+id/textDemoEmailLabel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:labelFor="@id/textEditDemoFormEmail"
                 android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/demo_label_email"
                 android:textAppearance="@style/Text.Subtitle.Secondary.ProximaNova.Light"
-                app:layout_constraintBottom_toTopOf="@id/textDemoEmailInput"
-                app:layout_constraintEnd_toEndOf="@id/textDemoFullNameInput"
-                app:layout_constraintStart_toStartOf="@id/textDemoFullNameInput"
-                app:layout_constraintTop_toBottomOf="@id/textDemoFullNameInput"
+                app:layout_constraintBottom_toTopOf="@id/textEditDemoFormEmail"
+                app:layout_constraintEnd_toEndOf="@id/textEditDemoFormFullName"
+                app:layout_constraintStart_toStartOf="@id/textEditDemoFormFullName"
+                app:layout_constraintTop_toBottomOf="@id/textEditDemoFormFullName"
                 tools:text="@string/demo_label_email" />
 
             <EditText
-                android:id="@+id/textDemoEmailInput"
+                android:id="@+id/textEditDemoFormEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xsmall"
@@ -161,16 +163,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
+                android:labelFor="@id/textEditDemoFormPhone"
                 android:text="@string/demo_label_phone_number"
                 android:textAppearance="@style/Text.Subtitle.Secondary.ProximaNova.Light"
-                app:layout_constraintBottom_toTopOf="@id/textDemoPhoneInput"
-                app:layout_constraintEnd_toEndOf="@id/textDemoEmailInput"
-                app:layout_constraintStart_toStartOf="@id/textDemoEmailInput"
-                app:layout_constraintTop_toBottomOf="@id/textDemoEmailInput"
+                app:layout_constraintBottom_toTopOf="@id/textEditDemoFormPhone"
+                app:layout_constraintEnd_toEndOf="@id/textEditDemoFormEmail"
+                app:layout_constraintStart_toStartOf="@id/textEditDemoFormEmail"
+                app:layout_constraintTop_toBottomOf="@id/textEditDemoFormEmail"
                 tools:text="@string/demo_label_phone_number" />
 
             <EditText
-                android:id="@+id/textDemoPhoneInput"
+                android:id="@+id/textEditDemoFormPhone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xsmall"
@@ -194,9 +197,9 @@
                 android:layout_marginTop="@dimen/margin_medium"
                 android:visibility="@{isLoading ? View.INVISIBLE : View.VISIBLE}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/textDemoPhoneInput"
-                app:layout_constraintStart_toStartOf="@id/textDemoPhoneInput"
-                app:layout_constraintTop_toBottomOf="@id/textDemoPhoneInput"
+                app:layout_constraintEnd_toEndOf="@id/textEditDemoFormPhone"
+                app:layout_constraintStart_toStartOf="@id/textEditDemoFormPhone"
+                app:layout_constraintTop_toBottomOf="@id/textEditDemoFormPhone"
                 app:layout_constraintVertical_chainStyle="packed" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
