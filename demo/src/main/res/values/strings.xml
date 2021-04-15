@@ -1,16 +1,16 @@
 <resources>
-    <string name="app_name">TF App Demo</string>
+    <string name="app_name">TF Demo App</string>
 
     <string name="splash_description">The highest standard for independent proof of consent.</string>
 
     <string name="why_trusted_toolbar_title">Why TrustedForm</string>
     <string name="why_trusted_toolbar_button">Skip</string>
     <string name="why_trusted_header">Why is TrustedForm so important?</string>
-    <string name="why_trusted_page_title_1">Third party documentation you can trust.  </string>
+    <string name="why_trusted_page_title_1"><![CDATA[<b>Third party</b>]]> documentation you can trust.  </string>
     <string name="why_trusted_page_description_1">TrustedForm independently collects information about who filled out a form, when, and where. We don’t rely on vendor-supplied data. </string>
-    <string name="why_trusted_page_title_2">The highest standard of proof available.</string>
+    <string name="why_trusted_page_title_2"><![CDATA[<b>The highest standard of proof available.</b>]]></string>
     <string name="why_trusted_page_description_2">TrustedForm provides proof that prior express written consent was obtained before you contact a lead.</string>
-    <string name="why_trusted_page_title_3">TCPA compliant protection. </string>
+    <string name="why_trusted_page_title_3"><![CDATA[<b>TCPA compliant protection.</b>]]></string>
     <string name="why_trusted_page_description_3">TrustedForm certificates are tamper-proof. In the event of a TCPA complaint, you can easily view and share a certificate with your legal team.</string>
     <string name="why_trusted_page_next">Next Step</string>
     <string name="why_trusted_page_benefit">Benefit of the SDK</string>
@@ -20,6 +20,7 @@
     <string name="loading">loading...</string>
     <string name="continue_text">Continue</string>
     <string name="skip">Skip</string>
+    <string name="ok">Ok</string>
 
     <!-- Labels   -->
     <string name="label_loading">Loading...</string>
@@ -36,8 +37,8 @@
 
     <!--  Demo Form Screen  -->
     <string name="demo_header">Demo Form</string>
-    <string name="demo_subheader">Fill out the form below and we’ll email you the TrustedForm certificate associated with your sign up.</string>
-    <string name="demo_label_full_name">Full Name:</string>
+    <string name="demo_subheader">Fill out the form below and we’ll email you the TrustedForm certificate associated with your <![CDATA[<b>signup</b>]]>.</string>
+    <string name="demo_label_first_name">First Name:</string>
     <string name="demo_label_email">Email: </string>
     <string name="demo_label_phone_number">Phone Number: </string>
     <string name="demo_button_submit">Submit</string>
@@ -72,7 +73,7 @@
     <string name="contact_work_email_hint">Work Email:</string>
     <string name="contact_phone_number_hint">Phone Number:</string>
     <string name="contact_message_hint">Message:</string>
-    <string name="contact_email_body_template">First Name:\n%1$s\n\nLast Name:\n%2$s\n\nPhone Number:\n%3$s\n\nMessage:\n%4$s</string>
+    <string name="contact_email_body_template">First Name:\n%1$s\n\nLast Name:\n%2$s\n\nWork Email:\n%3$s\n\nPhone Number:\n%4$s\n\nMessage:\n%5$s</string>
 
     <!--  Home Fragment  -->
     <string name="home_fragment_try_demo_card_header">Want to see how TrustedForm works on a mobile app?</string>
@@ -81,5 +82,11 @@
     <string name="home_fragment_learn_more_card_header">Learn More</string>
     <string name="home_fragment_learn_more_card_title">Learn more about TrustedForm for mobile apps.</string>
     <string name="home_fragment_learn_more_card_subtitle">Explore FAQs, technical documentation, and more.</string>
+
+    <!--  Templates  -->
+    <string name="template_dialer_telephone">tel:$%1s</string>
+    
+    <!--  Error Messages  -->
+    <string name="submit_certificate_error">Sorry, that didn\'t work! Please check your internet connection, and then try again.</string>
 
 </resources>

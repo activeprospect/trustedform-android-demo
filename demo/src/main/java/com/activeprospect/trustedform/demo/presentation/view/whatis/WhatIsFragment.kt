@@ -34,11 +34,17 @@ class WhatIsFragment(override val layoutId: Int = R.layout.fragment_what_is) :
         setupListeners()
     }
 
+    override fun onDestroyView() {
+        binding.viewPagerWhatIs.adapter = null
+        super.onDestroyView()
+    }
+
     private fun setupListeners() {
         binding.buttonWhatIsContinue.setOnClickListener { mainNavigator.navigateToBottomMenu() }
     }
 
     private fun setupViewPager() = with(binding) {
+        item = adapterItems.first()
         viewPagerAdapter = WhatIsAdapter(fragmentActivity = requireActivity(), items = adapterItems)
         viewPagerWhatIs.adapter = viewPagerAdapter
         viewPagerWhatIs.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -48,7 +54,7 @@ class WhatIsFragment(override val layoutId: Int = R.layout.fragment_what_is) :
             }
         })
 
-        TabLayoutMediator(viewPagerWhatIsIndicator, viewPagerWhatIs) { _, position -> }.attach()
+        TabLayoutMediator(viewPagerWhatIsIndicator, viewPagerWhatIs) { _, _ -> }.attach()
     }
 
     private val adapterItems by lazy {

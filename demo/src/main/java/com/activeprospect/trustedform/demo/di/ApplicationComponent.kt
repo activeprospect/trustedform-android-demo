@@ -2,13 +2,19 @@ package com.activeprospect.trustedform.demo.di
 
 import android.app.Application
 import com.activeprospect.trustedform.demo.TrustedFormApplication
+import com.activeprospect.trustedform.demo.data.di.DataModule
 import com.activeprospect.trustedform.demo.di.main.MainComponent
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [ApplicationModule::class])
+@Component(
+    modules = [
+        ApplicationModule::class,
+        DataModule::class
+    ]
+)
 interface ApplicationComponent {
 
     fun getMainComponentFactory(): MainComponent.Factory
