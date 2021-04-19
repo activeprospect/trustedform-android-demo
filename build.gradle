@@ -26,8 +26,8 @@ allprojects {
             url = uri("https://maven.pkg.github.com/activeprospect/trustedform-android-sdk")
 
             credentials {
-                username = "{USERNAME}"
-                password = "{PASSWORD}"
+                username = System.getenv("PM_USERNAME") ?: "{USERNAME}"
+                password = System.getenv("PM_TOKEN") ?: "{PASSWORD}"
             }
         }
     }
