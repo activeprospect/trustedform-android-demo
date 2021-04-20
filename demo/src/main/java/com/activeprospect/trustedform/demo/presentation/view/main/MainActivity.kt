@@ -17,8 +17,8 @@ class MainActivity(override val layoutId: Int = R.layout.activity_main) :
         get() = application as MainInjector
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         injector.inject(this)
+        super.onCreate(savedInstanceState)
     }
 
     override fun onBackPressed() {

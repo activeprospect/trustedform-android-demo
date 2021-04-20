@@ -4,6 +4,9 @@ import com.activeprospect.trustedform.BuildConfig
 import com.activeprospect.trustedform.demo.di.DaggerApplicationComponent
 import com.activeprospect.trustedform.demo.di.InjectorApplication
 import com.activeprospect.trustedform.sdk.api.TrustedForm
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.Crashes
 
 class TrustedFormApplication : InjectorApplication() {
 

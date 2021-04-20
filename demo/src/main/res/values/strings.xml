@@ -88,5 +88,6 @@
     
     <!--  Error Messages  -->
     <string name="submit_certificate_error">Sorry, that didn\'t work! Please check your internet connection, and then try again.</string>
+    <string name="create_certificate_error">Sorry, something went wrong! Please check your internet connection and try opening the form again.</string>
 
 </resources>

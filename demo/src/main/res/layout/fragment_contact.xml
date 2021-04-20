@@ -6,6 +6,7 @@
     <data>
 
         <import type="android.view.inputmethod.EditorInfo" />
+        <import type="android.text.InputType"/>
 
         <variable
             name="viewModel"
@@ -98,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
                 app:lines="@{1}"
+                app:inputType="@{InputType.TYPE_CLASS_PHONE}"
                 app:hintText="@{@string/contact_phone_number_hint}"
                 app:imeAction="@{EditorInfo.IME_ACTION_NEXT}"
                 app:labeledText="@={viewModel.phoneNumber}"
