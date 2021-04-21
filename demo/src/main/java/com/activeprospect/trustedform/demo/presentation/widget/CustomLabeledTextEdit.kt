@@ -51,6 +51,12 @@ class CustomLabeledTextEdit @JvmOverloads constructor(
         fun setListeners(view: CustomLabeledTextEdit, attrChange: InverseBindingListener) =
             view.textInput.doAfterTextChanged { attrChange.onChange() }
 
+        @BindingAdapter("app:inputType")
+        @JvmStatic
+        fun setInputType(view: CustomLabeledTextEdit, inputType: Int) {
+            view.textInput.inputType = inputType
+        }
+
         @BindingAdapter("app:imeAction")
         @JvmStatic
         fun setImeActionLabel(view: CustomLabeledTextEdit, value: Int) {
