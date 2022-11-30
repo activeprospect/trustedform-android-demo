@@ -13,7 +13,8 @@
 ![Gradle sync](/images/2-as-sync.png)
 
 ## AVD Deployment
-**Note: The following assumes you do NOT have an AVD preconfigured If you already have your AVD configured then skip to step 8**
+**Note: The following assumes you do NOT have an AVD preconfigured. If you already have your AVD configured then skip to step 12**
+
 7. Open the AVD Manager by clicking Tools > AVD Manager.
 ![Your AVDs](/images/3-avd-manager_2x.png)
 
@@ -22,8 +23,9 @@
 9. Select a hardware profile, and then click Next. If you don't see the hardware profile you want, you can create or import a hardware profile.
 ![Create AVD](/images/4-avd-manager-device_2x.png)
 
-  The System Image page appears. 
-![AVD System Image](/images/5-avd-system-image.png) 
+  The System Image page appears.
+![AVD System Image](/images/5-avd-system-image.png)
+
 
 10. Select a system image for **API level 30** , and then click Next.
 11. Change AVD properties as needed, and then click Finish.
@@ -34,6 +36,9 @@
 
 ## Physical Device 
   ** If you are deploying to AVD then skip step 12 **  
+12. Connect your Android device through USB - you should be able to select it from Android Studio devices list (see screenshot). If it's not there you can try running the `Tools > Troubleshoot Device Connections` tool (aka `Connection Assistant`). You could also use an emulator, but on Android it's a bit tricky topic - let me know if you need help with setting one up.
+![Physical Device](/images/7-as-physical-device.png)
+
 12. Connect your Android device through USB - you should be able to select it from Android Studio devices list (see screenshot). If it's not there you can try running the `Tools > Troubleshoot Device Connections` tool (aka `Connection Assistant`). You could also use an emulator, but on Android it's a bit tricky topic - let me know if you need help with setting one up.
 ![Physical Device](/images/7-as-physical-device.png)
 
