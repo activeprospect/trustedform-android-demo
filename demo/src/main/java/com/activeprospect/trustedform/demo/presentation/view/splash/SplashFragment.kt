@@ -11,6 +11,7 @@ import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.common.viewmodels.ViewModelFactory
 import com.activeprospect.trustedform.demo.di.splash.SplashInjector
 import com.activeprospect.trustedform.demo.presentation.view.main.MainFragmentNavigator
+import com.activeprospect.trustedform.demo.presentation.view.main.MainNavigator
 import javax.inject.Inject
 
 class SplashFragment(override val layoutId: Int = R.layout.fragment_splash) :
@@ -25,10 +26,17 @@ class SplashFragment(override val layoutId: Int = R.layout.fragment_splash) :
     @Inject
     lateinit var navigator: MainFragmentNavigator
 
+    @Inject
+    lateinit var mainNavigator: MainNavigator
+
     private val viewModel: SplashViewModel by viewModels { viewModelFactory }
 
-    private val observer = Observer<Boolean> { navigateForward ->
-        if (navigateForward) navigator.navigateToWhoIs()
+    private val observer = Observer<Boolean> { hasSeenIntro ->
+        if (hasSeenIntro) {
+            mainNavigator.navigateToBottomMenu()
+        } else {
+            navigator.navigateToWhoIs()
+        }
     }
 
     override fun onAttach(context: Context) {
@@ -38,7 +46,7 @@ class SplashFragment(override val layoutId: Int = R.layout.fragment_splash) :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.navigateForward.observe(viewLifecycleOwner, observer)
+        viewModel.hasSeenIntroEvent.observe(viewLifecycleOwner, observer)
     }
 
     override fun setupActionBar() = Unit

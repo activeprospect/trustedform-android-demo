@@ -6,7 +6,8 @@ import dagger.Module
     includes = [
         RetrofitModule::class,
         EndpointsModule::class,
-        RepositoriesModule::class
+        RepositoriesModule::class,
+        PreferencesModule::class
     ]
 )
 interface DataModule

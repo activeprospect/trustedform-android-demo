@@ -4,6 +4,7 @@
     <!-- Text sizes -->
     <dimen name="headline">28sp</dimen>
     <dimen name="headline2">24sp</dimen>
+    <dimen name="headline3">20sp</dimen>
     <dimen name="subtitle">14sp</dimen>
     <dimen name="subtitle2">12sp</dimen>
     <dimen name="subtitle3">10sp</dimen>
@@ -12,6 +13,8 @@
     <dimen name="title">17sp</dimen>
     <dimen name="title2">15sp</dimen>
     <dimen name="title3">13sp</dimen>
+    <dimen name="content">11sp</dimen>
+
 
     <!-- Margins & paddings -->
 
@@ -22,6 +25,7 @@
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_small">12dp</dimen>
     <dimen name="margin_xsmall">8dp</dimen>
+    <dimen name="margin_xxsmall">4dp</dimen>
 
     <dimen name="padding_large">20dp</dimen>
     <dimen name="padding_medium">16dp</dimen>

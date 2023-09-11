@@ -31,7 +31,7 @@ object RetrofitModule {
     @Provides
     fun provideRetrofit(client: OkHttpClient, moshi: Moshi): Retrofit = Retrofit.Builder()
         .client(client)
-        .baseUrl(BuildConfig.API_URL)
+        .baseUrl(BuildConfig.LEAD_CONDUIT_URL)
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
 }

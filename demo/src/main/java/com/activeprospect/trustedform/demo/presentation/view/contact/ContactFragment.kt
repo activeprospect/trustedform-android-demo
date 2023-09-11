@@ -1,5 +1,6 @@
 package com.activeprospect.trustedform.demo.presentation.view.contact
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -11,14 +12,13 @@ import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
 import android.view.View
+import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.activeprospect.trustedform.R
 import com.activeprospect.trustedform.databinding.FragmentContactBinding
-import com.activeprospect.trustedform.demo.Constants.DEFAULT_EMAIL_SUBJECT
-import com.activeprospect.trustedform.demo.Constants.DEFAULT_EMAIL_TYPE
-import com.activeprospect.trustedform.demo.Constants.TRUSTED_SUPPORT_EMAIL
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
+import com.activeprospect.trustedform.demo.common.livedata.Resource
 import com.activeprospect.trustedform.demo.common.viewmodels.ViewModelFactory
 import com.activeprospect.trustedform.demo.di.contact.ContactInjector
 import com.activeprospect.trustedform.demo.presentation.view.main.MainNavigator
@@ -52,6 +52,7 @@ class ContactFragment(override val layoutId: Int = R.layout.fragment_contact) :
     private fun setupView() {
         setupSpan()
         setListeners()
+        setupObservers()
     }
 
     private fun setupSpan() {
@@ -81,28 +82,34 @@ class ContactFragment(override val layoutId: Int = R.layout.fragment_contact) :
     }
 
     private fun setListeners() = with(binding) {
-        buttonContact.setOnClickListener { openEmailContext() }
+        buttonContact.setOnClickListener { fragmentViewModel.requestContact() }
     }
 
-    private fun openEmailContext() {
-        val emailBody = getString(
-            R.string.contact_email_body_template,
-            fragmentViewModel.firstName,
-            fragmentViewModel.lastName,
-            fragmentViewModel.workEmail,
-            fragmentViewModel.phoneNumber,
-            fragmentViewModel.message
-        ).trim()
-        val emailIntent = Intent(Intent.ACTION_SEND).apply {
-            type = DEFAULT_EMAIL_TYPE
-            putExtra(Intent.EXTRA_EMAIL, arrayOf(TRUSTED_SUPPORT_EMAIL))
-            putExtra(Intent.EXTRA_SUBJECT, DEFAULT_EMAIL_SUBJECT)
-            putExtra(Intent.EXTRA_TEXT, emailBody)
+    private fun setupObservers() = with(fragmentViewModel) {
+        response.observe(viewLifecycleOwner) { response ->
+            if (response is Resource.Success) response.dataEvent?.let {
+                showDialog(R.string.contact_request_success_title, R.string.contact_request_success_message)
+            } else if (response is Resource.Error) response.errorEvent?.let { throwable ->
+                throwable.message?.let { errorMessage ->
+                    showDialog(R.string.contact_request_error_title, errorMessage)
+                } ?: run {
+                    showDialog(R.string.contact_request_error_title, R.string.contact_request_error_message)
+                }
+            }
         }
+    }
 
-        if (emailIntent.resolveActivity(requireContext().packageManager) != null) {
-            startActivity(emailIntent)
-        }
+    private fun showDialog(@StringRes title: Int, @StringRes message: Int) {
+        showDialog(title, getString(message))
+    }
+
+    private fun showDialog(@StringRes title: Int, message: String) {
+        AlertDialog.Builder(requireContext())
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(R.string.ok) { dialogInterface, _ -> dialogInterface.dismiss() }
+            .create()
+            .show()
     }
 
     private fun openDialer(phoneNumber: String) {
@@ -110,4 +117,6 @@ class ContactFragment(override val layoutId: Int = R.layout.fragment_contact) :
         val intent = Intent(Intent.ACTION_DIAL, dialUri)
         startActivity(intent)
     }
+
+
 }

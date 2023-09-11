@@ -4,6 +4,9 @@ import com.activeprospect.trustedform.BuildConfig
 import com.activeprospect.trustedform.demo.di.DaggerApplicationComponent
 import com.activeprospect.trustedform.demo.di.InjectorApplication
 import com.activeprospect.trustedform.sdk.api.TrustedForm
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.Crashes
 
 class TrustedFormApplication : InjectorApplication() {
 
@@ -11,12 +14,15 @@ class TrustedFormApplication : InjectorApplication() {
         super.onCreate()
 
         TrustedForm.configure(
-            appId = BuildConfig.APPLICATION_ID,
-            accessToken = "e21e11c1743fb512d85b600887d2162bee3ced7b",
+            appId = BuildConfig.APP_ID,
+            apiUrl = BuildConfig.TRUSTED_FORM_URL,
+            certUrl = BuildConfig.CERTIFICATE_URL,
+            accessToken = BuildConfig.API_TOKEN,
             application = this
         )
 
         initInjector()
+        setupAppCenter()
     }
 
     private fun initInjector() {
@@ -24,5 +30,14 @@ class TrustedFormApplication : InjectorApplication() {
             initInjector(it)
             it.inject(this)
         }
+    }
+
+    private fun setupAppCenter() {
+        AppCenter.start(
+            this,
+            BuildConfig.APPCENTER_KEY,
+            Analytics::class.java,
+            Crashes::class.java
+        )
     }
 }

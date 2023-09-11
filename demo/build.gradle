@@ -22,29 +22,41 @@ android {
     productFlavors {
         dev {
             dimension "version"
-            buildConfigField "String", "API_URL", '"https://engage.activeprospect.com"'
-            buildConfigField "String", "CERTIFICATE_URL", '"https://cert.staging.trustedform.com/"'
+            buildConfigField "String", "TRUSTED_FORM_URL", '"https://api.trustedform-dev.com"'
+            buildConfigField "String", "LEAD_CONDUIT_URL", '"https://app.leadconduit.com"'
+            buildConfigField "String", "CERTIFICATE_URL", '"https://cert.trustedform-dev.com"'
+            buildConfigField "String", "APP_ID", '"my-app-123"'
+            buildConfigField "String", "API_TOKEN", '"cfaca2ccdde6b7156a60a746c82cb8d596e1a0ca"'
+            buildConfigField "String", "APPCENTER_KEY", '""'
         }
         prod {
             dimension "version"
-            buildConfigField "String", "API_URL", '"https://engage.activeprospect.com"'
-            buildConfigField "String", "CERTIFICATE_URL", '"https://cert.trustedform.com/"'
+            buildConfigField "String", "TRUSTED_FORM_URL", '"https://api.trustedform.com"'
+            buildConfigField "String", "LEAD_CONDUIT_URL", '"https://app.leadconduit.com"'
+            buildConfigField "String", "CERTIFICATE_URL", '"https://cert.trustedform.com"'
+            buildConfigField "String", "APP_ID", '"sborrazas-prod"'
+            buildConfigField "String", "API_TOKEN", '"75d30e131d7cd29ebb4a92f4b564b900b5128153"'
+            buildConfigField "String", "APPCENTER_KEY", '""'
         }
+
         stage {
             dimension "version"
-            buildConfigField "String", "API_URL", '"https://engage.activeprospect.com"'
-            buildConfigField "String", "CERTIFICATE_URL", '"https://cert.staging.trustedform.com/"'
+            buildConfigField "String", "TRUSTED_FORM_URL", '"https://api.staging.trustedform.com"'
+            buildConfigField "String", "LEAD_CONDUIT_URL", '"https://app.leadconduit.com"'
+            buildConfigField "String", "CERTIFICATE_URL", '"https://cert.staging.trustedform.com"'
+            buildConfigField "String", "APP_ID", '"my-app-123"'
+            buildConfigField "String", "API_TOKEN", '"cfaca2ccdde6b7156a60a746c82cb8d596e1a0ca"'
+            buildConfigField "String", "APPCENTER_KEY", '""'
         }
     }
 }
 
 dependencies {
+    implementation "active-prospect:trusted-form:$libVersion.latestSdkVersion"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     implementation "androidx.core:core-ktx:$libVersion.core"
     implementation "androidx.appcompat:appcompat:$libVersion.appCompat"
-
-    implementation "active-prospect:trusted-form:$libVersion.latestSdkVersion"
 
     implementation "com.google.android.material:material:$libVersion.materialComponents"
     implementation "androidx.constraintlayout:constraintlayout:$libVersion.constraint"

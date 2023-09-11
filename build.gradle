@@ -26,8 +26,8 @@ allprojects {
             url = uri("https://maven.pkg.github.com/activeprospect/trustedform-android-sdk")
 
             credentials {
-                username = "{USERNAME}"
-                password = "{PASSWORD}"
+                username = "{GITHUB_USERNAME}"
+                password = "{GITHUB_PERSONAL_ACCESS_TOKEN}"
             }
         }
     }

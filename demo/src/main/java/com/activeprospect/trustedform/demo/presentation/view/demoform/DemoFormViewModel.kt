@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.activeprospect.trustedform.BuildConfig
 import com.activeprospect.trustedform.demo.common.livedata.Resource
+import com.activeprospect.trustedform.demo.data.models.DemoFormOutcome
 import com.activeprospect.trustedform.demo.domain.models.EmailRequest
 import com.activeprospect.trustedform.demo.domain.repositories.ActiveProspectRepository
 import com.activeprospect.trustedform.sdk.api.model.Certificate
@@ -52,14 +53,22 @@ class DemoFormViewModel @Inject constructor(
     }
 
     fun requestCertificate() {
+        // TODO: Update or remove last name after client confirms it's requirement
         val request = EmailRequest(
             email = email,
             firstName = fullName,
             phone = phone,
-            xxTrustedFormCertUrl = BuildConfig.CERTIFICATE_URL + cert?.certId
+            xxTrustedFormCertUrl = BuildConfig.CERTIFICATE_URL + "/" + cert?.certId
         )
         activeProspectRepository.requestEmail(request)
-            .onEach { _response.value = Resource.Success(Unit) }
+            .onEach { response ->
+                if (response?.outcome == DemoFormOutcome.success) {
+                    _response.value = Resource.Success(Unit)
+                }
+                else {
+                    _response.value = Resource.Error(Throwable())
+                }
+            }
             .catch { _response.value = Resource.Error(it) }
             .launchIn(viewModelScope)
     }

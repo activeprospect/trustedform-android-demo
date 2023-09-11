@@ -38,8 +38,12 @@ class CustomLabeledTextEdit @JvmOverloads constructor(
 
         @BindingAdapter("app:labeledText")
         @JvmStatic
-        fun setCustomLabel(view: CustomLabeledTextEdit, newValue: String) =
-            view.textInput.setText(newValue)
+        fun setCustomLabel(view: CustomLabeledTextEdit, newValue: String) {
+            if (view.textInput.text.toString() != newValue) {
+                view.textInput.setText(newValue)
+            }
+        }
+
 
         @InverseBindingAdapter(attribute = "app:labeledText")
         @JvmStatic
@@ -50,6 +54,12 @@ class CustomLabeledTextEdit @JvmOverloads constructor(
         @JvmStatic
         fun setListeners(view: CustomLabeledTextEdit, attrChange: InverseBindingListener) =
             view.textInput.doAfterTextChanged { attrChange.onChange() }
+
+        @BindingAdapter("app:inputType")
+        @JvmStatic
+        fun setInputType(view: CustomLabeledTextEdit, inputType: Int) {
+            view.textInput.inputType = inputType
+        }
 
         @BindingAdapter("app:imeAction")
         @JvmStatic

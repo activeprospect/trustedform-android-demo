@@ -10,78 +10,78 @@
             type="com.activeprospect.trustedform.demo.presentation.view.whatis.WhatIsItem" />
     </data>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.55" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerWhatIs"
+            style="@style/Widget.TrustedForm.ViewPager.Tour"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/viewPagerWhatIsIndicator"
+            style="@style/Widget.TrustedForm.TabLayout.Tour"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/view_pager_dot_height"
+            android:layout_marginBottom="@dimen/margin_40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.55"/>
+        <TextView
+            android:id="@+id/textWhatIsHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_xsmall"
+            android:textAppearance="@style/Text.Headline.Primary.ProximaNova.Regular"
+            app:htmlText="@{item.title}"
+            app:layout_constraintBottom_toTopOf="@id/textWhatIsSubheader"
+            app:layout_constraintEnd_toEndOf="@id/viewPagerWhatIs"
+            app:layout_constraintStart_toStartOf="@id/viewPagerWhatIs"
+            app:layout_constraintTop_toBottomOf="@id/viewPagerWhatIsIndicator"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="@string/demo_header" />
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPagerWhatIs"
-                style="@style/Widget.TrustedForm.ViewPager.Tour"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="@dimen/margin_large"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/guideline"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textWhatIsSubheader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{item.description}"
+            android:textAppearance="@style/Text.Subtitle.Primary.ProximaNova.Regular"
+            app:layout_constraintBottom_toTopOf="@id/buttonWhatIsContinue"
+            app:layout_constraintEnd_toEndOf="@id/textWhatIsHeader"
+            app:layout_constraintStart_toStartOf="@id/textWhatIsHeader"
+            app:layout_constraintTop_toBottomOf="@id/textWhatIsHeader"
+            tools:text="@string/demo_subheader" />
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/viewPagerWhatIsIndicator"
-                style="@style/Widget.TrustedForm.TabLayout.Tour"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_pager_dot_height"
-                android:layout_marginBottom="@dimen/margin_40dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/viewPagerWhatIs" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonWhatIsContinue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:backgroundTint="@color/primary"
+            android:text="@string/continue_text"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/textWhatIsSubheader"
+            app:layout_constraintStart_toStartOf="@id/textWhatIsSubheader" />
 
-            <TextView
-                android:id="@+id/textWhatIsHeader"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_medium"
-                android:layout_marginBottom="@dimen/margin_xsmall"
-                app:htmlText="@{item.title}"
-                android:textAppearance="@style/Text.Headline.Primary.ProximaNova.Regular"
-                app:layout_constraintEnd_toEndOf="@id/viewPagerWhatIs"
-                app:layout_constraintStart_toStartOf="@id/viewPagerWhatIs"
-                app:layout_constraintBottom_toTopOf="@id/textWhatIsSubheader"
-                app:layout_constraintTop_toBottomOf="@id/viewPagerWhatIsIndicator"
-                app:layout_constraintVertical_chainStyle="packed"
-                tools:text="@string/demo_header" />
-
-            <TextView
-                android:id="@+id/textWhatIsSubheader"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:text="@{item.description}"
-                android:textAppearance="@style/Text.Subtitle.Primary.ProximaNova.Regular"
-                app:layout_constraintBottom_toTopOf="@id/buttonWhatIsContinue"
-                app:layout_constraintEnd_toEndOf="@id/textWhatIsHeader"
-                app:layout_constraintStart_toStartOf="@id/textWhatIsHeader"
-                app:layout_constraintTop_toBottomOf="@id/textWhatIsHeader"
-                tools:text="@string/demo_subheader" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonWhatIsContinue"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_medium"
-                android:backgroundTint="@color/primary"
-                android:text="@string/continue_text"
-                android:textAllCaps="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/textWhatIsSubheader"
-                app:layout_constraintStart_toStartOf="@id/textWhatIsSubheader" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

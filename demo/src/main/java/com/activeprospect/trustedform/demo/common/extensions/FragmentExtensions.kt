@@ -19,3 +19,6 @@ fun Fragment.setupBottomNavigationView(containerId: Int, view: BottomNavigationV
         ?.findNavController()
         ?.let { view.setupWithNavController(it) }
 }
+
+val Fragment.isViewDestroyed: Boolean
+    get() = view == null
