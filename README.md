@@ -9,25 +9,26 @@
 
 4. On the `SDK Manager > SDK Tools` tab: check the `Show Package Details` checkbox, select `Android SDK Build-Tools 30.0.2` and click `Apply`
 5. Back on the `Welcome to Android Studio` click `Open an Exisiting Project` and select the Demo's folder
-6. In your project's build.gradle file, replace {GITHUB_USERNAME} and {GITHUB_PERSONAL_ACCESS_TOKEN} with your actual GitHub credentials to access the Trusted Form SDK. These credentials are required to authenticate and fetch the necessary dependencies. For information on how to setup Personal Access Tokens please see [GitHub Documentation on Managing Personal Access Tokens](https://docs.github.com/en/enterprise-server@3.6/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
-7. After the AS window loads click the 'Gradle Sync' button to set up all dependencies (highlighted on the screenshot below)
+6. In the project's build.gradle file, replace {GITHUB_USERNAME} and {GITHUB_PERSONAL_ACCESS_TOKEN} with your actual GitHub credentials to access the Trusted Form SDK. These credentials are required to authenticate and fetch the necessary dependencies. For information on how to setup Personal Access Tokens please see [GitHub Documentation on Managing Personal Access Tokens](https://docs.github.com/en/enterprise-server@3.6/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+7. In the demo/build.gradle file, replace {MY_APP_ID} and {MY_API_TOKEN} with your App ID and API Token.
+8. After the AS window loads click the 'Gradle Sync' button to set up all dependencies (highlighted on the screenshot below)
 ![Gradle sync](/images/2-as-sync.png)
 
 ## AVD Deployment
 **Note: The following assumes you do NOT have an AVD preconfigured If you already have your AVD configured then skip to step 8**
-8. Open the AVD Manager by clicking Tools > AVD Manager.
+9. Open the AVD Manager by clicking Tools > AVD Manager.
 ![Your AVDs](/images/3-avd-manager_2x.png)
 
-9. Click Create Virtual Device, at the bottom of the AVD Manager dialog
+10. Click Create Virtual Device, at the bottom of the AVD Manager dialog
    ** Note: The Select Hardware page appears.Notice that only some hardware profiles are indicated to include Play Store. This indicates that these profiles are fully CTS compliant and may use system images that include the Play Store app.**
-10. Select a hardware profile, and then click Next. If you don't see the hardware profile you want, you can create or import a hardware profile.
+11. Select a hardware profile, and then click Next. If you don't see the hardware profile you want, you can create or import a hardware profile.
 ![Create AVD](/images/4-avd-manager-device_2x.png)
 
   The System Image page appears. 
 ![AVD System Image](/images/5-avd-system-image.png) 
 
-11. Select a system image for **API level 30** , and then click Next.
-12. Change AVD properties as needed, and then click Finish.
+12. Select a system image for **API level 30** , and then click Next.
+13. Change AVD properties as needed, and then click Finish.
     Click Show Advanced Settings to show more settings, such as the skin.
     The new AVD appears in the Your Virtual Devices page or the Select Deployment Target dialog.
 ![AVD](/images/6-avd-manager-system_2x.png)
@@ -35,10 +36,10 @@
 
 ## Physical Device 
   ** If you are deploying to AVD then skip step 12 **  
-13. Connect your Android device through USB - you should be able to select it from Android Studio devices list (see screenshot). If it's not there you can try running the `Tools > Troubleshoot Device Connections` tool (aka `Connection Assistant`). You could also use an emulator, but on Android it's a bit tricky topic - let me know if you need help with setting one up.
+14. Connect your Android device through USB - you should be able to select it from Android Studio devices list (see screenshot). If it's not there you can try running the `Tools > Troubleshoot Device Connections` tool (aka `Connection Assistant`). You could also use an emulator, but on Android it's a bit tricky topic - let me know if you need help with setting one up.
 ![Physical Device](/images/7-as-physical-device.png)
 
-14. You can build and run the project with the `Run` button:
+15. You can build and run the project with the `Run` button:
 
 ![Run](/images/as-run.png)
 

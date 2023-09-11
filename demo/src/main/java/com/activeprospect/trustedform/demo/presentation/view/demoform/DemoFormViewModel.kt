@@ -53,7 +53,6 @@ class DemoFormViewModel @Inject constructor(
     }
 
     fun requestCertificate() {
-        // TODO: Update or remove last name after client confirms it's requirement
         val request = EmailRequest(
             email = email,
             firstName = fullName,
