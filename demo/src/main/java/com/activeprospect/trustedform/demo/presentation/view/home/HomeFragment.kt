@@ -9,6 +9,7 @@ import com.activeprospect.trustedform.R
 import com.activeprospect.trustedform.databinding.FragmentHomeBinding
 import com.activeprospect.trustedform.demo.Constants.ACTIVE_PROSPECT_WEBSITE
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
+import com.activeprospect.trustedform.demo.data.preferences.ActiveProspectPreferences
 import com.activeprospect.trustedform.demo.di.home.HomeInjector
 import com.activeprospect.trustedform.demo.presentation.view.bottommenu.BottomMenuNavigator
 import javax.inject.Inject
@@ -21,6 +22,15 @@ class HomeFragment(override val layoutId: Int = R.layout.fragment_home) :
 
     @Inject
     lateinit var navigator: BottomMenuNavigator
+
+    @Inject
+    lateinit var preferences: ActiveProspectPreferences
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        preferences.markIntroAsSeen()
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

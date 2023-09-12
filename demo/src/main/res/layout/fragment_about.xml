@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".demo.presentation.view.about.AboutFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/textDemoDialogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:paddingVertical="@dimen/padding_large"
+            android:paddingHorizontal="@dimen/padding_medium"
+            android:text="@string/about_title"
+            android:textAppearance="@style/Text.Title.Secondary.ProximaNova.SemiBold"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/aboutDialogScrollview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/buttonAboutDialogX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:paddingVertical="@dimen/margin_large"
+            android:src="@drawable/ic_close"
+            app:layout_constraintBottom_toBottomOf="@id/textDemoDialogTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textDemoDialogTitle" />
+
+        <ScrollView
+            android:id="@+id/aboutDialogScrollview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            app:layout_constraintBottom_toTopOf="@id/buttonAboutDialogClose"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textDemoDialogTitle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="@dimen/padding_medium">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/margin_large">
+
+                    <TextView
+                        android:id="@+id/textAboutHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_activeprospect"
+                        android:textAppearance="@style/Text.Headline3.Primary.ProximaNova.SemiBold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iconActiveProspectTrustedForm"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iconActiveProspectTrustedForm"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_trusted_form_seal"
+                        app:layout_constraintBottom_toBottomOf="@+id/textAboutHeader"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textAboutHeader" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:text="@string/about_verified"
+                    android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_owner_title"
+                    android:layout_marginBottom="@dimen/margin_xsmall"
+                    android:textAppearance="@style/Text.Subtitle2.Primary.ProximaNova.Regular" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_small">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_owner_name_label"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_owner_name"
+                        android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_small">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_owner_address_label"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_owner_address"
+                        android:layout_gravity="center"
+                        android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_small">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_owner_website_label"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_owner_website"
+                        android:autoLink="web"
+                        android:textColorLink="@color/light_blue"
+                        android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_small">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_owner_email_label"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_owner_email"
+                        android:autoLink="email"
+                        android:textColorLink="@color/light_blue"
+                        android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_xxxlarge">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_owner_phone_label"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_owner_phone"
+                        android:layout_gravity="end"
+                        android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_xsmall"
+                    android:text="@string/about_trustedform_title"
+                    android:textAppearance="@style/Text.Subtitle2.Primary.ProximaNova.Regular" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:background="@color/separator"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_trustedform_description"
+                    android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+
+                <TextView
+                    android:id="@+id/buttonAboutPrivacyPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_trustedform_privacy_policy_label"
+                    android:paddingVertical="@dimen/padding_large"
+                    android:textColorLink="@color/light_blue"
+                    android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:id="@+id/backgroundDemoDialogButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/dusty_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/aboutDialogScrollview" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAboutDialogClose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/demo_dialog_button_margin"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:backgroundTint="@color/primary"
+            android:text="@string/about_close_button"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/aboutDialogScrollview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -33,6 +33,7 @@ class BottomMenuFragment(override val layoutId: Int = R.layout.fragment_bottom_m
 
     private fun setupView() = with(binding) {
         setupBottomNavigationView(R.id.navContainerBottomMenu, bottomNavigationBar)
+        blockBottomBarReselection()
     }
 
     override fun setupActionBar() = with(binding) {
@@ -45,6 +46,10 @@ class BottomMenuFragment(override val layoutId: Int = R.layout.fragment_bottom_m
             .addOnDestinationChangedListener { controller, destination, arguments ->
                 toolbarBottomMenu.title = destination.label.toString()
             }
+    }
+
+    private fun blockBottomBarReselection() {
+        binding.bottomNavigationBar.setOnNavigationItemReselectedListener { }
     }
 
     override fun onDestroy() {

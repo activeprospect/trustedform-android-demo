@@ -3,19 +3,24 @@ package com.activeprospect.trustedform.demo.presentation.view.demoform
 import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
+import android.text.InputType
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import androidx.annotation.StringRes
 import androidx.fragment.app.viewModels
 import com.activeprospect.trustedform.R
 import com.activeprospect.trustedform.databinding.FragmentDemoFormBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.common.extensions.hideKeyboard
+import com.activeprospect.trustedform.demo.common.extensions.isViewDestroyed
 import com.activeprospect.trustedform.demo.common.livedata.Resource
 import com.activeprospect.trustedform.demo.common.viewmodels.ViewModelFactory
 import com.activeprospect.trustedform.demo.di.demoform.DemoFormInjector
 import com.activeprospect.trustedform.demo.presentation.view.bottommenu.BottomMenuNavigator
+import com.activeprospect.trustedform.demo.presentation.view.about.AboutFragment
 import com.activeprospect.trustedform.sdk.api.TrustedForm
 import com.activeprospect.trustedform.sdk.api.extensions.isSensitive
+import com.activeprospect.trustedform.sdk.api.model.TrustedResource
 import javax.inject.Inject
 
 class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form) :
@@ -69,6 +74,12 @@ class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form)
             }
             true
         }
+
+        iconActiveProspectTrustedForm.setOnClickListener {
+            AboutFragment().apply {
+                show(this@DemoFormFragment.parentFragmentManager, null)
+            }
+        }
     }
 
     private fun setupTrustedFrom() = with(binding) {
@@ -77,12 +88,28 @@ class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form)
 
         val consentText = getString(R.string.checkable_terms_text)
 
-        TrustedForm.default.createCertificate(consentText) { cert ->
-            widgetFormDemo.initialize(cert)
-            TrustedForm.default.startTracking(cert, requireActivity())
+        TrustedForm.default.createCertificate(consentText) { resource ->
+            if (isViewDestroyed) return@createCertificate
+            when (resource) {
+                is TrustedResource.Success -> {
+                    val certificate = resource.data
+                    fragmentViewModel.cert = certificate
+                    widgetFormDemo.initialize(certificate)
+                    TrustedForm.default.startTracking(certificate, requireActivity())
+                }
+                is TrustedResource.Error -> {
+                    lockInputs()
+                    showErrorDialog(R.string.create_certificate_error)
+                }
+            }
             showLoading(false)
-            fragmentViewModel.cert = cert
         }
+    }
+
+    private fun lockInputs() = with(binding) {
+        textEditDemoFormFullName.inputType = InputType.TYPE_NULL
+        textEditDemoFormEmail.inputType = InputType.TYPE_NULL
+        textEditDemoFormPhone.inputType = InputType.TYPE_NULL
     }
 
     private fun setupObservers() = with(fragmentViewModel) {
@@ -91,7 +118,7 @@ class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form)
                 cert?.let { TrustedForm.default.stopTracking(it, requireActivity()) }
                 navigator.navigateToDemoFormCompleted()
             } else if (response is Resource.Error) response.errorEvent?.let {
-                showErrorDialog()
+                showErrorDialog(R.string.submit_certificate_error)
             }
             showLoading(false)
         }
@@ -101,9 +128,9 @@ class DemoFormFragment(override val layoutId: Int = R.layout.fragment_demo_form)
         }
     }
 
-    private fun showErrorDialog() {
+    private fun showErrorDialog(@StringRes errorMessage: Int) {
         AlertDialog.Builder(requireContext())
-            .setMessage(R.string.submit_certificate_error)
+            .setMessage(errorMessage)
             .setPositiveButton(R.string.ok) { dialogInterface, _ -> dialogInterface.dismiss() }
             .create()
             .show()

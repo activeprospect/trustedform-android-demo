@@ -25,6 +25,10 @@
         <item name="android:textSize">@dimen/headline2</item>
     </style>
 
+    <style name="Text.Headline3">
+        <item name="android:textSize">@dimen/headline3</item>
+    </style>
+
     <style name="Text.Headline.Primary">
         <item name="android:textColor">@color/headline</item>
     </style>
@@ -33,9 +37,15 @@
         <item name="android:textColor">@color/headline</item>
     </style>
 
+    <style name="Text.Headline3.Primary">
+        <item name="android:textColor">@color/headline</item>
+    </style>
+
     <style name="Text.Headline.Primary.ProximaNova" />
 
     <style name="Text.Headline2.Primary.ProximaNova" />
+
+    <style name="Text.Headline3.Primary.ProximaNova" />
 
     <style name="Text.Headline.Primary.ProximaNova.Bold">
         <item name="fontFamily">@font/proxima_nova_bold</item>
@@ -47,6 +57,10 @@
 
     <style name="Text.Headline2.Primary.ProximaNova.Bold">
         <item name="fontFamily">@font/proxima_nova_bold</item>
+    </style>
+
+    <style name="Text.Headline3.Primary.ProximaNova.SemiBold">
+        <item name="fontFamily">@font/proxima_nova_semibold</item>
     </style>
 
     <style name="Text.Subtitle">
@@ -174,6 +188,20 @@
     </style>
 
     <style name="Text.Title3.Secondary.ProximaNova.Regular">
+        <item name="fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
+    <style name="Text.Content">
+        <item name="android:textSize">@dimen/content</item>
+    </style>
+
+    <style name="Text.Content.Primary">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="Text.Content.Primary.ProximaNova"/>
+
+    <style name="Text.Content.Primary.ProximaNova.Regular">
         <item name="fontFamily">@font/proxima_nova_regular</item>
     </style>
 
