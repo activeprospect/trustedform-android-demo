@@ -1,8 +1,7 @@
 package com.activeprospect.trustedform.demo.di.demoform
 
-import com.activeprospect.trustedform.demo.presentation.view.demoform.DemoFormFragment
+import com.activeprospect.trustedform.demo.presentation.view.demoform.ContactInfoScreenFragment
 
 interface DemoFormInjector {
-
-    fun inject(fragment: DemoFormFragment)
+    fun inject(fragment: ContactInfoScreenFragment)
 }

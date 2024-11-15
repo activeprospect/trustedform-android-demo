@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import com.activeprospect.trustedform.R
+import com.activeprospect.trustedform.demo.R
 import com.google.android.material.button.MaterialButton
 
 

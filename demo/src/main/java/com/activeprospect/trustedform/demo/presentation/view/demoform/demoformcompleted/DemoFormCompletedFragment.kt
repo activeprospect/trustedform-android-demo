@@ -7,8 +7,8 @@ import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.activeprospect.trustedform.R
-import com.activeprospect.trustedform.databinding.FragmentDemoCompletedBinding
+import com.activeprospect.trustedform.demo.R
+import com.activeprospect.trustedform.demo.databinding.FragmentDemoCompletedBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.di.demoform.demoformcompleted.DemoFormCompletedInjector
 import com.activeprospect.trustedform.demo.presentation.view.bottommenu.BottomMenuNavigator

@@ -1,8 +1,8 @@
 package com.activeprospect.trustedform.demo.presentation.view.main
 
 import android.os.Bundle
-import com.activeprospect.trustedform.R
-import com.activeprospect.trustedform.databinding.ActivityMainBinding
+import com.activeprospect.trustedform.demo.R
+import com.activeprospect.trustedform.demo.databinding.ActivityMainBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseActivity
 import com.activeprospect.trustedform.demo.di.main.MainInjector
 import javax.inject.Inject

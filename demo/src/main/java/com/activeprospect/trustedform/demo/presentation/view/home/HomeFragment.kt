@@ -5,8 +5,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import com.activeprospect.trustedform.R
-import com.activeprospect.trustedform.databinding.FragmentHomeBinding
+import com.activeprospect.trustedform.demo.R
+import com.activeprospect.trustedform.demo.databinding.FragmentHomeBinding
 import com.activeprospect.trustedform.demo.Constants.ACTIVE_PROSPECT_WEBSITE
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.data.preferences.ActiveProspectPreferences
@@ -43,7 +43,7 @@ class HomeFragment(override val layoutId: Int = R.layout.fragment_home) :
     }
 
     private fun setupView() = with(binding) {
-        buttonHomeCardDemo.setOnClickListener { navigator.navigateToDemoForm() }
+        buttonHomeCardDemo.setOnClickListener { navigator.navigateToComposeDemoForm() }
         cardHomeLearnMore.setOnClickListener { openWebBrowser() }
     }
 

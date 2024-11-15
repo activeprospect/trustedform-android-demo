@@ -1,6 +1,6 @@
 package com.activeprospect.trustedform.demo.data.di
 
-import com.activeprospect.trustedform.BuildConfig
+import com.activeprospect.trustedform.demo.BuildConfig
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides

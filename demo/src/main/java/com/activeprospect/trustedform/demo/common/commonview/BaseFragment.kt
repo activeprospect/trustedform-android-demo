@@ -14,7 +14,7 @@ abstract class BaseFragment<TViewBinding : ViewDataBinding> : Fragment() {
 
     private var innerBinding: TViewBinding? = null
 
-    protected val binding: TViewBinding
+    val binding: TViewBinding
         get() = innerBinding ?: throw IllegalStateException()
 
     protected val baseActivity: BaseActivity<*>

@@ -7,9 +7,10 @@
         android:title="@string/label_home" />
 
     <item
-        android:id="@+id/demoFormFragment"
+        android:id="@+id/demoFormComposeFragment"
         android:icon="@drawable/ic_bottom_demo"
-        android:title="@string/label_try_demo" />
+        android:title="@string/label_try_compose_demo" />
+
     <item
         android:id="@+id/contactFragment"
         android:icon="@drawable/ic_bottom_contact"

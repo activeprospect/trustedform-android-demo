@@ -9,8 +9,8 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
-import com.activeprospect.trustedform.R
-import com.activeprospect.trustedform.databinding.FragmentSignInBinding
+import com.activeprospect.trustedform.demo.R
+import com.activeprospect.trustedform.demo.databinding.FragmentSignInBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.common.extensions.hideKeyboard
 import com.activeprospect.trustedform.demo.common.viewmodels.ViewModelFactory

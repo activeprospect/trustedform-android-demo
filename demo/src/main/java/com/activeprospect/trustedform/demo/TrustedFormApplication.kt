@@ -1,6 +1,6 @@
 package com.activeprospect.trustedform.demo
 
-import com.activeprospect.trustedform.BuildConfig
+import com.activeprospect.trustedform.demo.BuildConfig
 import com.activeprospect.trustedform.demo.di.DaggerApplicationComponent
 import com.activeprospect.trustedform.demo.di.InjectorApplication
 import com.activeprospect.trustedform.sdk.api.TrustedForm

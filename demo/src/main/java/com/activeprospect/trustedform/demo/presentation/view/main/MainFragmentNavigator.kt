@@ -2,9 +2,8 @@ package com.activeprospect.trustedform.demo.presentation.view.main
 
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import com.activeprospect.trustedform.R
+import com.activeprospect.trustedform.demo.R
 import com.activeprospect.trustedform.demo.common.navigation.BaseFragmentNavigator
-import kotlinx.android.synthetic.main.fragment_main.*
 import javax.inject.Inject
 
 interface MainFragmentNavigator {
@@ -18,7 +17,7 @@ class MainFragmentNavigatorImpl @Inject constructor(
 ) : BaseFragmentNavigator(fragment), MainFragmentNavigator {
 
     override val navController: NavController
-        get() = fragment.navContainerIntroduction.findNavController()
+        get() = fragment.binding.navContainerIntroduction.findNavController()
 
     override fun navigateToWhoIs() = navigate(R.id.whoIsFragment)
 

@@ -15,8 +15,8 @@ import android.view.View
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
-import com.activeprospect.trustedform.R
-import com.activeprospect.trustedform.databinding.FragmentContactBinding
+import com.activeprospect.trustedform.demo.R
+import com.activeprospect.trustedform.demo.databinding.FragmentContactBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.common.livedata.Resource
 import com.activeprospect.trustedform.demo.common.viewmodels.ViewModelFactory

@@ -5,8 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.activeprospect.trustedform.R
-import kotlinx.android.synthetic.main.fragment_what_is_page.*
+import com.activeprospect.trustedform.demo.R
 
 class WhatIsFragmentPage : Fragment() {
 
@@ -30,14 +29,4 @@ class WhatIsFragmentPage : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(R.layout.fragment_what_is_page, container, false)
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setUpView()
-    }
-
-    private fun setUpView() {
-        val arguments = requireArguments()
-        image?.setImageResource(arguments.getInt(IMAGE_ID_KEY))
-    }
 }

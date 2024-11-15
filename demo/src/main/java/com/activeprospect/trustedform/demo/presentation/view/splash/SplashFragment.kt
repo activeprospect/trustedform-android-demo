@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.activeprospect.trustedform.R
-import com.activeprospect.trustedform.databinding.FragmentSplashBinding
+import com.activeprospect.trustedform.demo.R
+import com.activeprospect.trustedform.demo.databinding.FragmentSplashBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.common.viewmodels.ViewModelFactory
 import com.activeprospect.trustedform.demo.di.splash.SplashInjector
