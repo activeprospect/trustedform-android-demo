@@ -20,7 +20,7 @@ import androidx.fragment.app.activityViewModels
 import com.activeprospect.trustedform.demo.R
 import com.activeprospect.trustedform.sdk.api.TrustedForm
 import com.activeprospect.trustedform.sdk.api.model.Certificate
-import com.activeprospect.trustedform.sdk.api.model.demo.TFElementRole
+import com.activeprospect.trustedform.sdk.api.model.TFElementRole
 import com.activeprospect.trustedform.sdk.api.trustedFormButtonRole
 import com.activeprospect.trustedform.sdk.api.trustedFormLabelRole
 

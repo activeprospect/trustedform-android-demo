@@ -26,14 +26,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.fragment.app.activityViewModels
 import com.activeprospect.trustedform.demo.R
 import com.activeprospect.trustedform.sdk.api.TrustedForm
+import com.activeprospect.trustedform.sdk.api.consentTextRole
 import com.activeprospect.trustedform.sdk.api.model.TFElementRole
 import com.activeprospect.trustedform.sdk.api.model.TrustedResource
-import com.activeprospect.trustedform.sdk.api.consentTextRole
 import com.activeprospect.trustedform.sdk.api.sensitive
 import com.activeprospect.trustedform.sdk.api.trustedFormButtonRole
 import com.activeprospect.trustedform.sdk.api.trustedFormRole
 import com.activeprospect.trustedform.sdk.api.trustedFormTextFieldRole
 import com.activeprospect.trustedform.sdk.api.trustedFormToggleRole
+
 
 class ContactInfoScreenFragment : Fragment(R.layout.fragment_contact_info_screen) {
 
@@ -48,10 +49,11 @@ class ContactInfoScreenFragment : Fragment(R.layout.fragment_contact_info_screen
             when (resource) {
                 is TrustedResource.Success -> {
                     viewModel.setCertificate(resource.data)
-                    
                     composeView.setContent {
                         TrustedForm.default.startTracking(resource.data, this.requireActivity())
                         DemoFormScreen(navController)
+                        Log.d("Cert Creation", "${resource.data}")
+
                     }
                 }
                 is TrustedResource.Error -> {
