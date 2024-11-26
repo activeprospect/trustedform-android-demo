@@ -91,7 +91,7 @@ android {
 }
 
 dependencies {
-    implementation "active-prospect:trusted-form-compose:$libVersion.latestSdkVersion"
+    implementation "active-prospect:trusted-form:$libVersion.latestSdkVersion"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     implementation "androidx.core:core-ktx:$libVersion.core"
