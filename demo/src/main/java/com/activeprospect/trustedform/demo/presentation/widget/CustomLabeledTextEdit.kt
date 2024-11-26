@@ -9,8 +9,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseBindingAdapter
 import androidx.databinding.InverseBindingListener
-import com.activeprospect.trustedform.databinding.CustomLabeledTextEditBinding
-import kotlinx.android.synthetic.main.custom_labeled_text_edit.view.*
+import com.activeprospect.trustedform.demo.databinding.CustomLabeledTextEditBinding
 
 class CustomLabeledTextEdit @JvmOverloads constructor(
     context: Context,
@@ -39,8 +38,8 @@ class CustomLabeledTextEdit @JvmOverloads constructor(
         @BindingAdapter("app:labeledText")
         @JvmStatic
         fun setCustomLabel(view: CustomLabeledTextEdit, newValue: String) {
-            if (view.textInput.text.toString() != newValue) {
-                view.textInput.setText(newValue)
+            if (view.innerBinding?.textInput?.text.toString() != newValue) {
+                view.innerBinding?.textInput?.setText(newValue)
             }
         }
 
@@ -48,29 +47,29 @@ class CustomLabeledTextEdit @JvmOverloads constructor(
         @InverseBindingAdapter(attribute = "app:labeledText")
         @JvmStatic
         fun getCustomLabel(view: CustomLabeledTextEdit): String =
-            view.textInput.text.toString()
+            view.innerBinding?.textInput?.text.toString()
 
         @BindingAdapter("app:labeledTextAttrChanged")
         @JvmStatic
         fun setListeners(view: CustomLabeledTextEdit, attrChange: InverseBindingListener) =
-            view.textInput.doAfterTextChanged { attrChange.onChange() }
+            view.innerBinding?.textInput?.doAfterTextChanged { attrChange.onChange() }
 
         @BindingAdapter("app:inputType")
         @JvmStatic
         fun setInputType(view: CustomLabeledTextEdit, inputType: Int) {
-            view.textInput.inputType = inputType
+            view.innerBinding?.textInput?.inputType = inputType
         }
 
         @BindingAdapter("app:imeAction")
         @JvmStatic
         fun setImeActionLabel(view: CustomLabeledTextEdit, value: Int) {
-            view.textInput.imeOptions = value
+            view.innerBinding?.textInput?.imeOptions = value
         }
 
         @BindingAdapter("app:lines")
         @JvmStatic
         fun setLines(view: CustomLabeledTextEdit, value: Int) {
-            view.textInput.apply {
+            view.innerBinding?.textInput?.apply {
                 maxLines = value
                 setLines(value)
             }
@@ -79,7 +78,7 @@ class CustomLabeledTextEdit @JvmOverloads constructor(
         @BindingAdapter("app:multiline")
         @JvmStatic
         fun setMultiline(view: CustomLabeledTextEdit, value: Boolean) {
-            view.textInput.apply {
+            view.innerBinding?.textInput?.apply {
                 if (value) {
                     inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
                 }

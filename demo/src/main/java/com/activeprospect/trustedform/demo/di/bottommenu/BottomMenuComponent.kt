@@ -2,8 +2,9 @@ package com.activeprospect.trustedform.demo.di.bottommenu
 
 import com.activeprospect.trustedform.demo.di.FragmentScope
 import com.activeprospect.trustedform.demo.di.contact.ContactComponent
-import com.activeprospect.trustedform.demo.di.demoform.DemoFormComponent
+import com.activeprospect.trustedform.demo.di.demoform.DemoFormComposeComponent
 import com.activeprospect.trustedform.demo.di.demoform.demoformcompleted.DemoFormCompletedComponent
+import com.activeprospect.trustedform.demo.di.demoform.demoformpage2.DemoFormComposePage2Component
 import com.activeprospect.trustedform.demo.di.home.HomeComponent
 import com.activeprospect.trustedform.demo.presentation.view.bottommenu.BottomMenuFragment
 import dagger.BindsInstance
@@ -17,8 +18,9 @@ interface BottomMenuComponent {
 
     fun getHomeComponent(): HomeComponent.Factory
     fun getContactComponent(): ContactComponent.Factory
-    fun getDemoFormComponentFactory(): DemoFormComponent.Factory
+    fun getDemoFormComposeComponentFactory(): DemoFormComposeComponent.Factory
     fun getDemoFormCompletedComponentFactory(): DemoFormCompletedComponent.Factory
+    fun getDemoFormComposePage2Factory(): DemoFormComposePage2Component.Factory
 
     @Subcomponent.Factory
     interface Factory {

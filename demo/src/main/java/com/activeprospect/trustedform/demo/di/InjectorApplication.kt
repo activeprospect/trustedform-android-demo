@@ -6,6 +6,7 @@ import com.activeprospect.trustedform.demo.di.bottommenu.BottomMenuInjector
 import com.activeprospect.trustedform.demo.di.contact.ContactInjector
 import com.activeprospect.trustedform.demo.di.demoform.DemoFormInjector
 import com.activeprospect.trustedform.demo.di.demoform.demoformcompleted.DemoFormCompletedInjector
+import com.activeprospect.trustedform.demo.di.demoform.demoformpage2.DemoFormComposePage2Injector
 import com.activeprospect.trustedform.demo.di.home.HomeInjector
 import com.activeprospect.trustedform.demo.di.intoduction.IntroductionComponent
 import com.activeprospect.trustedform.demo.di.intoduction.IntroductionInjector
@@ -17,7 +18,8 @@ import com.activeprospect.trustedform.demo.di.whatIs.WhatIsInjector
 import com.activeprospect.trustedform.demo.di.whois.WhoIsInjector
 import com.activeprospect.trustedform.demo.presentation.view.bottommenu.BottomMenuFragment
 import com.activeprospect.trustedform.demo.presentation.view.contact.ContactFragment
-import com.activeprospect.trustedform.demo.presentation.view.demoform.DemoFormFragment
+import com.activeprospect.trustedform.demo.presentation.view.demoform.ContactInfoScreenFragment
+import com.activeprospect.trustedform.demo.presentation.view.demoform.AdvertiserSuggestionScreenFragment
 import com.activeprospect.trustedform.demo.presentation.view.demoform.demoformcompleted.DemoFormCompletedFragment
 import com.activeprospect.trustedform.demo.presentation.view.home.HomeFragment
 import com.activeprospect.trustedform.demo.presentation.view.main.MainActivity
@@ -31,6 +33,7 @@ open class InjectorApplication : Application(),
     ContactInjector,
     DemoFormInjector,
     DemoFormCompletedInjector,
+    DemoFormComposePage2Injector,
     BottomMenuInjector,
     HomeInjector,
     MainInjector,
@@ -102,13 +105,18 @@ open class InjectorApplication : Application(),
             ?.bindFragment(fragment)
             ?.inject(fragment) ?: throw IllegalStateException()
 
-    override fun inject(fragment: DemoFormFragment) =
-        bottomMenuComponent?.getDemoFormComponentFactory()
+    override fun inject(fragment: ContactInfoScreenFragment) =
+        bottomMenuComponent?.getDemoFormComposeComponentFactory()
             ?.bindFragment(fragment)
             ?.inject(fragment) ?: throw IllegalStateException()
 
     override fun inject(fragment: DemoFormCompletedFragment) =
         bottomMenuComponent?.getDemoFormCompletedComponentFactory()
+            ?.bindFragment(fragment)
+            ?.inject(fragment) ?: throw IllegalStateException()
+
+    override fun inject(fragment: AdvertiserSuggestionScreenFragment) =
+        bottomMenuComponent?.getDemoFormComposePage2Factory()
             ?.bindFragment(fragment)
             ?.inject(fragment) ?: throw IllegalStateException()
 

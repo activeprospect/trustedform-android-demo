@@ -1,9 +1,38 @@
-apply plugin: 'com.android.application'
-apply from: "$rootDir/shared.gradle"
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+apply from: rootProject.file('versions.gradle')
 
 android {
-    defaultConfig { applicationId androidVersion.applicationId }
+    namespace "com.activeprospect.trustedform.demo"
+    compileSdk androidVersion.compileSdk
+
+    defaultConfig {
+        applicationId androidVersion.applicationId
+        minSdk androidVersion.minSdk
+        targetSdk androidVersion.targetSdk
+        versionCode 1
+        versionName androidVersion.versionName
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+        compose true
+        buildConfig true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.3'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
 
     buildTypes {
         debug {
@@ -25,17 +54,18 @@ android {
             buildConfigField "String", "TRUSTED_FORM_URL", '"https://api.trustedform-dev.com"'
             buildConfigField "String", "LEAD_CONDUIT_URL", '"https://app.leadconduit.com"'
             buildConfigField "String", "CERTIFICATE_URL", '"https://cert.trustedform-dev.com"'
-            buildConfigField "String", "APP_ID", '{MY_APP_ID}'
-            buildConfigField "String", "API_TOKEN", '{MY_API_TOKEN}'
+            buildConfigField "String", "APP_ID", '"my-app-123"'
+            buildConfigField "String", "API_TOKEN", '"ad950f82eec1abe16508bd7ca9964e9e2871bc9e"'
             buildConfigField "String", "APPCENTER_KEY", '""'
         }
         prod {
             dimension "version"
+            // TODO: Update these values for production
             buildConfigField "String", "TRUSTED_FORM_URL", '"https://api.trustedform.com"'
             buildConfigField "String", "LEAD_CONDUIT_URL", '"https://app.leadconduit.com"'
             buildConfigField "String", "CERTIFICATE_URL", '"https://cert.trustedform.com"'
-            buildConfigField "String", "APP_ID", '{MY_APP_ID}'
-            buildConfigField "String", "API_TOKEN", '{MY_API_TOKEN}'
+            buildConfigField "String", "APP_ID", '"sborrazas-prod"'
+            buildConfigField "String", "API_TOKEN", '"75d30e131d7cd29ebb4a92f4b564b900b5128153"'
             buildConfigField "String", "APPCENTER_KEY", '""'
         }
 
@@ -44,10 +74,19 @@ android {
             buildConfigField "String", "TRUSTED_FORM_URL", '"https://api.staging.trustedform.com"'
             buildConfigField "String", "LEAD_CONDUIT_URL", '"https://app.leadconduit.com"'
             buildConfigField "String", "CERTIFICATE_URL", '"https://cert.staging.trustedform.com"'
-            buildConfigField "String", "APP_ID", '{MY_APP_ID}'
-            buildConfigField "String", "API_TOKEN", '{MY_API_TOKEN}'
+            buildConfigField "String", "APP_ID", '"my-app-123"'
+            buildConfigField "String", "API_TOKEN", '"cfaca2ccdde6b7156a60a746c82cb8d596e1a0ca"'
             buildConfigField "String", "APPCENTER_KEY", '""'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 
@@ -81,8 +120,34 @@ dependencies {
     implementation "com.microsoft.appcenter:appcenter-crashes:$libVersion.appCenter"
 
     testImplementation 'junit:junit:4.+'
-    testImplementation 'org.koin:koin-test:2.2.1'
+//    testImplementation 'org.koin:koin-test:2.2.1'
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    def composeBom = platform('androidx.compose:compose-bom:2023.10.00')
+    implementation composeBom
+    androidTestImplementation composeBom
+
+    // Choose one of the following:
+    // Material Design 3
+    implementation 'androidx.compose.material3:material3'
+
+    // Android Studio Preview support
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+}
+
+configurations.all {
+    resolutionStrategy {
+        force "org.jetbrains.kotlin:kotlin-stdlib:1.8.10"
+        force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10"
+        force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10"
+        force "org.jetbrains.kotlin:kotlin-reflect:1.8.10"
+    }
+}
+
+// Add JVM toolchain configuration
+kotlin {
+    jvmToolchain(17)
 }

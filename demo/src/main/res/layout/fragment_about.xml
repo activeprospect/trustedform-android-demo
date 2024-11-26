@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".demo.presentation.view.about.AboutFragment">
+    tools:context=".presentation.view.about.AboutFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_small">
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/about_owner_name_label"
                         android:layout_weight="1"
@@ -124,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_small">
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/about_owner_address_label"
                         android:layout_weight="1"
@@ -143,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_small">
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/about_owner_website_label"
                         android:layout_weight="1"
@@ -163,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_small">
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/about_owner_email_label"
                         android:layout_weight="1"
@@ -183,7 +183,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_xxxlarge">
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/about_owner_phone_label"
                         android:layout_weight="1"
@@ -193,7 +193,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/about_owner_phone"
-                        android:layout_gravity="end"
+                        android:layout_gravity="right"
                         android:textAppearance="@style/Text.Content.Primary.ProximaNova.Regular" />
                 </LinearLayout>
 

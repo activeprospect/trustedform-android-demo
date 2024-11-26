@@ -4,8 +4,8 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
-import com.activeprospect.trustedform.R
-import com.activeprospect.trustedform.databinding.FragmentWhatIsBinding
+import com.activeprospect.trustedform.demo.R
+import com.activeprospect.trustedform.demo.databinding.FragmentWhatIsBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.di.whatIs.WhatIsInjector
 import com.activeprospect.trustedform.demo.presentation.view.main.MainNavigator

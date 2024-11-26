@@ -3,7 +3,7 @@ package com.activeprospect.trustedform.demo.presentation.view.main
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import com.activeprospect.trustedform.R
+import com.activeprospect.trustedform.demo.R
 import com.activeprospect.trustedform.demo.common.navigation.BaseActivityNavigator
 import javax.inject.Inject
 

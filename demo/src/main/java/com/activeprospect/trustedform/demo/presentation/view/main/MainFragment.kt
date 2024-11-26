@@ -3,8 +3,8 @@ package com.activeprospect.trustedform.demo.presentation.view.main
 import android.content.Context
 import androidx.core.view.isVisible
 import androidx.navigation.findNavController
-import com.activeprospect.trustedform.R
-import com.activeprospect.trustedform.databinding.FragmentMainBinding
+import com.activeprospect.trustedform.demo.R
+import com.activeprospect.trustedform.demo.databinding.FragmentMainBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.di.intoduction.IntroductionInjector
 import javax.inject.Inject

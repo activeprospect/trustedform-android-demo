@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">TF Demo App</string>
+
     <string name="splash_description">The highest standard for independent proof of consent.</string>
+
     <string name="why_trusted_toolbar_title">Why TrustedForm</string>
     <string name="why_trusted_toolbar_button">Skip</string>
     <string name="why_trusted_header">Why is TrustedForm so important?</string>
@@ -12,20 +14,23 @@
     <string name="why_trusted_page_description_3">TrustedForm certificates are tamper-proof. In the event of a TCPA complaint, you can easily view and share a certificate with your legal team.</string>
     <string name="why_trusted_page_next">Next Step</string>
     <string name="why_trusted_page_benefit">Benefit of the SDK</string>
+
     <string name="trusted_email">support@activeprospect.com</string>
-    <string name="loading">loading…</string>
+
+    <string name="loading">loading...</string>
     <string name="continue_text">Continue</string>
     <string name="skip">Skip</string>
     <string name="ok">Ok</string>
 
     <!-- Labels   -->
-    <string name="label_loading">Loading…</string>
+    <string name="label_loading">Loading...</string>
     <string name="label_who_is">Who is ActiveProspect?</string>
     <string name="label_demo_app">TrustedForm Demo App</string>
     <string name="label_sign_in">Sign In</string>
     <string name="label_sign_up">Sign Up</string>
     <string name="label_demo_form">Demo Form</string>
     <string name="label_try_demo">Try Demo</string>
+    <string name="label_try_compose_demo">Try Compose Demo</string>
     <string name="label_demo_form_completed">Demo Form Completed</string>
     <string name="label_home">Home</string>
     <string name="label_how_to_implement">How To Implement</string>
@@ -33,6 +38,7 @@
 
     <!--  Demo Form Screen  -->
     <string name="demo_header">Demo Form</string>
+    <string name="compose_demo_header">Compose Demo Form</string>
     <string name="demo_subheader">Fill out the form below and we’ll email you the TrustedForm certificate associated with your <![CDATA[<b>signup</b>]]>.</string>
     <string name="demo_label_first_name">First Name:</string>
     <string name="demo_label_email">Email: </string>
@@ -40,6 +46,7 @@
     <string name="demo_button_submit">Submit</string>
     <string name="active_prospect_trusted_form_info">About Trusted Form</string>
     <string name="active_prospect_trusted_form_label">Click here to learn more</string>
+
     <string name="demo_completed_header">Thanks for trying the TrustedForm demo!</string>
     <string name="demo_completed_subheader">You will receive an email from %1$s shortly (if you don’t see it, check your spam folder). Click the link in the email to view the TrustedForm certificate. </string>
 
@@ -98,11 +105,12 @@
     <string name="about_owner_email_label">Email Address:</string>
     <string name="about_owner_email">support@activeprospect.com</string>
     <string name="about_owner_phone_label">Phone Number:</string>
-    <string name="about_owner_phone">512–394–4546</string>
+    <string name="about_owner_phone">512-394-4546</string>
     <string name="about_trustedform_title">About TrustedForm:</string>
     <string name="about_trustedform_description">TrustedForm is a product provided by ActiveProspect that helps companies comply with regulations such as the Telephone Consumer Protection Act (TCPA) which require documentation of consent. \n\n To delete any data we have collected about you, don’t submit the form. Simply leave the screen where you see our seal without submitting the form and any information captured by TrustedForm will be deleted.</string>
     <string name="about_trustedform_privacy_policy_label"><a href="https://activeprospect.com/privacy-policy/">View the TrustedForm privacy policy.</a></string>
     <string name="about_close_button">Close</string>
+
 
     <!--  Templates  -->
     <string name="template_dialer_telephone">tel:$%1s</string>
@@ -110,4 +118,6 @@
     <!--  Error Messages  -->
     <string name="submit_certificate_error">Sorry, that didn\'t work! Please check your internet connection, and then try again.</string>
     <string name="create_certificate_error">Sorry, something went wrong! Please check your internet connection and try opening the form again.</string>
+
+
 </resources>

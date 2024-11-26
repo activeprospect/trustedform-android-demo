@@ -3,8 +3,8 @@ package com.activeprospect.trustedform.demo.presentation.view.whois
 import android.content.Context
 import android.os.Bundle
 import android.view.View
-import com.activeprospect.trustedform.R
-import com.activeprospect.trustedform.databinding.FragmentWhoIsBinding
+import com.activeprospect.trustedform.demo.R
+import com.activeprospect.trustedform.demo.databinding.FragmentWhoIsBinding
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.di.whois.WhoIsInjector
 import com.activeprospect.trustedform.demo.presentation.view.main.MainFragmentNavigator

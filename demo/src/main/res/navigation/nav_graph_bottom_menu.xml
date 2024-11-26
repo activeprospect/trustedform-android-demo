@@ -6,16 +6,34 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/demoFormFragment"
-        android:name="com.activeprospect.trustedform.demo.presentation.view.demoform.DemoFormFragment"
+        android:id="@+id/demoFormComposeFragment"
+        android:name="com.activeprospect.trustedform.demo.presentation.view.demoform.ContactInfoScreenFragment"
         android:label="@string/label_demo_form"
-        tools:layout="@layout/fragment_demo_form" />
+        tools:layout="@layout/fragment_contact_info_screen">
+
+        <action
+            android:id="@+id/action_demoFormComposeFragment_to_demoFormComposePage2Fragment"
+            app:destination="@id/demoFormComposePage2Fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/demoFormCompletedFragment"
         android:name="com.activeprospect.trustedform.demo.presentation.view.demoform.demoformcompleted.DemoFormCompletedFragment"
         android:label="@string/label_demo_form_completed"
         tools:layout="@layout/fragment_demo_completed" />
+
+    <fragment
+        android:id="@+id/demoFormComposePage2Fragment"
+        android:name="com.activeprospect.trustedform.demo.presentation.view.demoform.AdvertiserSuggestionScreenFragment"
+        android:label="@string/label_demo_form_completed"
+        tools:layout="@layout/fragment_advertiser_suggestion_screen">
+
+        <action
+            android:id="@+id/action_advertiserSuggestionScreen_to_contactInfoScreen"
+            app:destination="@id/demoFormComposeFragment"
+            app:popUpTo="@id/demoFormComposeFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
     <fragment
         android:id="@+id/homeFragment"

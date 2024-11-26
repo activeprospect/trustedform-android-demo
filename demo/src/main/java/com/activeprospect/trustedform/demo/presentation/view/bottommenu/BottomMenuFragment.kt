@@ -4,10 +4,10 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.findNavController
-import com.activeprospect.trustedform.R
-import com.activeprospect.trustedform.databinding.FragmentBottomMenuBinding
+import com.activeprospect.trustedform.demo.R
 import com.activeprospect.trustedform.demo.common.commonview.BaseFragment
 import com.activeprospect.trustedform.demo.common.extensions.setupBottomNavigationView
+import com.activeprospect.trustedform.demo.databinding.FragmentBottomMenuBinding
 import com.activeprospect.trustedform.demo.di.bottommenu.BottomMenuInjector
 import javax.inject.Inject
 
@@ -43,7 +43,7 @@ class BottomMenuFragment(override val layoutId: Int = R.layout.fragment_bottom_m
         }
 
         navContainerBottomMenu.findNavController()
-            .addOnDestinationChangedListener { controller, destination, arguments ->
+            .addOnDestinationChangedListener { _, destination, _ ->
                 toolbarBottomMenu.title = destination.label.toString()
             }
     }

@@ -2,14 +2,13 @@ package com.activeprospect.trustedform.demo.presentation.view.bottommenu
 
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import com.activeprospect.trustedform.R
+import com.activeprospect.trustedform.demo.R
 import com.activeprospect.trustedform.demo.common.navigation.BaseFragmentNavigator
-import kotlinx.android.synthetic.main.fragment_bottom_menu.*
 import javax.inject.Inject
 
 interface BottomMenuNavigator {
     fun navigateToDemoFormCompleted()
-    fun navigateToDemoForm()
+    fun navigateToComposeDemoForm()
 }
 
 class BottomMenuNavigatorImpl @Inject constructor(
@@ -17,13 +16,13 @@ class BottomMenuNavigatorImpl @Inject constructor(
 ) : BaseFragmentNavigator(fragment), BottomMenuNavigator {
 
     override val navController: NavController
-        get() = fragment.navContainerBottomMenu.findNavController()
+        get() = fragment.binding.navContainerBottomMenu.findNavController()
 
     override fun navigateToDemoFormCompleted() {
         navigate(R.id.demoFormCompletedFragment)
     }
 
-    override fun navigateToDemoForm() {
-        navigate(R.id.demoFormFragment)
+    override fun navigateToComposeDemoForm() {
+        navigate(R.id.demoFormComposeFragment)
     }
 }
